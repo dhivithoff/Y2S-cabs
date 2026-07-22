@@ -6,7 +6,7 @@ import { MessageCircle, ShieldCheck, Clock, MapPin, Headphones, ArrowRight } fro
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[100dvh] overflow-hidden bg-[#0a0a0a]">
+    <section className="relative w-full min-h-[100vh] overflow-hidden bg-[#0a0a0a]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -44,6 +44,8 @@ export default function HeroSection() {
             Safe. Reliable. Always on time.
           </p>
 
+          <div className="h-[40px] md:h-[60px]" /> {/* Spacer to move button down */}
+
           <motion.a 
             href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20taxi."
             target="_blank"
@@ -54,7 +56,7 @@ export default function HeroSection() {
           >
             <div className="flex items-center gap-[12px]">
               <MessageCircle className="w-[18px] h-[18px] text-[#111111]" strokeWidth={1.5} />
-              <span className="font-sans font-medium text-[15px] text-[#111111]">Book on WhatsApp</span>
+              <span className="font-sans font-medium text-[15px] text-[#111111]">Book Ride</span>
             </div>
             <ArrowRight className="w-[18px] h-[18px] text-[#111111]" strokeWidth={1.5} />
           </motion.a>
@@ -70,7 +72,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="absolute left-[24px] right-[24px] bottom-[110px] rounded-[24px] bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.06)] p-[24px] z-20 shadow-2xl"
+          className="absolute left-[24px] right-[24px] bottom-[40px] md:bottom-[60px] rounded-[24px] bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.06)] p-[24px] z-20 shadow-2xl"
         >
           <div className="grid grid-cols-4 gap-0 relative h-full">
             

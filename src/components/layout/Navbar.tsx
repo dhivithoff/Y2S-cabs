@@ -1,57 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Menu, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="fixed top-0 w-full z-50 h-[88px] bg-transparent"
+      className={`fixed top-0 w-full z-50 h-[88px] transition-colors duration-300 ${scrolled ? 'bg-[#111111]/95 backdrop-blur-md shadow-md border-b border-[rgba(255,255,255,0.05)]' : 'bg-transparent'}`}
     >
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full max-w-[1440px] mx-auto flex items-center justify-between px-[24px]">
         {/* Logo */}
         <Link 
           href="/" 
-          className="absolute block" 
-          style={{ top: '18px', left: '24px', width: '118px', height: '110px' }}
+          className="relative w-[118px] h-[110px] mt-[20px]" 
         >
           <Image
             src="/logo.png"
             alt="Y2S Cabs Logo"
             fill
             sizes="118px"
-            className="object-contain"
+            className="object-contain object-top"
             priority
           />
         </Link>
 
-        {/* Mobile Navigation Controls */}
-        <div 
-          className="absolute flex items-center gap-[16px]"
-          style={{ top: '18px', right: '24px' }}
-        >
+        {/* Call Button (Right Corner) */}
+        <div className="flex items-center">
+          {/* Desktop/Tablet explicit call button */}
           <a
             href="tel:+919790279217"
-            className="flex items-center justify-center w-[52px] h-[52px] rounded-[16px] border border-[#8F7443] bg-transparent"
+            className="hidden sm:flex items-center gap-[10px] bg-[rgba(197,161,93,0.1)] border border-[#C5A15D] text-[#C5A15D] h-[46px] px-[20px] rounded-full font-sans font-medium hover:bg-[#C5A15D] hover:text-[#111111] transition-all"
+          >
+            <Phone className="w-[18px] h-[18px]" strokeWidth={2} />
+            <span className="text-[15px]">+91 97902 79217</span>
+          </a>
+          
+          {/* Mobile icon call button */}
+          <a
+            href="tel:+919790279217"
+            className="flex sm:hidden items-center justify-center w-[46px] h-[46px] rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors"
             aria-label="Call Us"
           >
-            <Phone className="w-[24px] h-[24px] text-primary" />
+            <Phone className="w-[20px] h-[20px]" strokeWidth={2} />
           </a>
-          <button
-            className="flex items-center justify-center w-[52px] h-[52px] rounded-[16px] border border-[#8F7443] bg-transparent"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="w-[24px] h-[24px] text-primary" />
-          </button>
         </div>
       </div>
     </motion.header>
