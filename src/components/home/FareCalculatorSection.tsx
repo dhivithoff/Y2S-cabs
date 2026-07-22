@@ -10,18 +10,16 @@ export default function FareCalculatorSection() {
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
   const [vehicle, setVehicle] = useState("sedan");
+  const [distance, setDistance] = useState<string>("15");
 
   const rates = { sedan: 15, suv: 20 };
   const baseFare = { sedan: 300, suv: 500 };
-  
-  // Fixed distance for UI demo since the new design features 3 inputs.
-  const distance = 15; 
-  const time = 45;
 
   const calculateFare = () => {
     const rate = rates[vehicle as keyof typeof rates];
     const base = baseFare[vehicle as keyof typeof baseFare];
-    return base + (distance * rate);
+    const numDistance = parseFloat(distance) || 0;
+    return base + (numDistance * rate);
   };
 
   const estimatedFare = calculateFare();
@@ -29,11 +27,6 @@ export default function FareCalculatorSection() {
   const handleSwap = () => {
     setPickup(dropoff);
     setDropoff(pickup);
-  };
-
-  const handleWhatsApp = () => {
-    const text = `Hi, I would like to get an estimate.\n\nPickup: ${pickup}\nDropoff: ${dropoff}\nVehicle: ${vehicle === 'sedan' ? 'Luxury Sedan' : 'Premium SUV'}\nEstimated Fare: ₹${estimatedFare}\n\nPlease confirm availability.`;
-    window.open(`https://wa.me/919790279217?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
@@ -57,8 +50,7 @@ export default function FareCalculatorSection() {
           <span className="font-sans font-medium text-[14px] tracking-[4px] text-[#C5A15D] uppercase mb-[16px]">
             FARE CALCULATOR
           </span>
-          <div className="w-[40px] h-[2px] bg-[#C5A15D] mb-[24px]"></div>
-          {/* Heading and Description Removed */}
+          <div className="w-[40px] h-[2px] bg-[#C5A15D]"></div>
         </div>
 
         {/* Form Card */}
@@ -105,6 +97,23 @@ export default function FareCalculatorSection() {
             </div>
           </div>
 
+          {/* Estimated Distance (KM) Input */}
+          <div className="w-full h-[88px] bg-[#1a1a1a] rounded-[18px] border border-[rgba(255,255,255,0.04)] px-[20px] flex items-center gap-[16px]">
+            <Clock className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
+            <div className="flex flex-col flex-grow justify-center h-full">
+              <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">ESTIMATED KM</span>
+              <input 
+                suppressHydrationWarning
+                type="number" 
+                min="1"
+                placeholder="Enter estimated distance in KM"
+                className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
+                value={distance}
+                onChange={(e) => setDistance(e.target.value)}
+              />
+            </div>
+          </div>
+
           {/* Vehicle Type Input */}
           <div className="w-full h-[88px] bg-[#1a1a1a] rounded-[18px] border border-[rgba(255,255,255,0.04)] px-[20px] flex items-center gap-[16px]">
             <Car className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
@@ -123,52 +132,10 @@ export default function FareCalculatorSection() {
           </div>
         </div>
 
-        {/* Results Card */}
-        <div className="w-full bg-[#111111] rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[36px] flex flex-col mb-[18px]">
-          {/* Top Metrics */}
-          <div className="flex flex-col md:flex-row items-center w-full mb-[40px] gap-[24px] md:gap-0">
-            {/* Distance */}
-            <div className="flex items-center gap-[16px] flex-1 justify-center">
-              <MapPin className="w-[42px] h-[42px] text-[#C5A15D]" strokeWidth={1.5} />
-              <div className="flex flex-col text-left">
-                <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Estimated Distance</span>
-                <span className="font-sans font-semibold text-[30px] text-white">{distance} km</span>
-              </div>
-            </div>
-            
-            {/* Divider */}
-            <div className="hidden md:block w-[1px] h-[64px] bg-[rgba(255,255,255,0.08)] mx-[32px]"></div>
-            <div className="md:hidden w-full h-[1px] bg-[rgba(255,255,255,0.08)]"></div>
-            
-            {/* Time */}
-            <div className="flex items-center gap-[16px] flex-1 justify-center">
-              <Clock className="w-[42px] h-[42px] text-[#C5A15D]" strokeWidth={1.5} />
-              <div className="flex flex-col text-left">
-                <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Estimated Time</span>
-                <span className="font-sans font-semibold text-[30px] text-white">{time} mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-center text-center flex-grow mb-[24px]">
-            <span className="font-sans font-medium text-[18px] tracking-[2px] uppercase text-[#C5A15D] mb-[8px]">ESTIMATED FARE</span>
-            <span className="font-serif font-bold text-[82px] leading-[84px] text-[#C5A15D] mb-[12px]">₹{estimatedFare.toLocaleString('en-IN')}</span>
-            <span className="font-sans font-normal text-[18px] text-[#D3D3D1] mb-[16px]">Includes base fare, taxes, and estimated distance.</span>
-            
-            <div className="flex flex-col sm:flex-row items-center gap-[8px]">
-              <ShieldCheck className="w-[18px] h-[18px] text-[#BEBEB8]" />
-              <span className="font-sans font-normal text-[18px] text-[#BEBEB8]">No hidden charges. Verified drivers.</span>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <Link 
-            href="/book"
-            className="w-full h-[64px] bg-[#C5A15D] rounded-[16px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors shadow-[0_4px_16px_rgba(197,161,93,0.3)]"
-          >
-            <span className="font-sans font-semibold text-[20px] text-[#111111]">Book Now</span>
-            <ArrowRight className="w-[22px] h-[22px] text-[#111111]" />
-          </Link>
+        {/* Calculated Value (Results Card) */}
+        <div className="w-full bg-[#111111] rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[36px] flex flex-col items-center justify-center text-center">
+          <span className="font-sans font-medium text-[18px] tracking-[2px] uppercase text-[#C5A15D] mb-[8px]">ESTIMATED FARE</span>
+          <span className="font-serif font-bold text-[82px] leading-[84px] text-[#C5A15D]">₹{estimatedFare.toLocaleString('en-IN')}</span>
         </div>
 
       </div>
