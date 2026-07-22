@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     siteName: "Y2S Cabs & Travels",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 800,
+        url: "/metalogo.jpeg",
+        width: 1200,
+        height: 630,
         alt: "Y2S Cabs & Travels Logo",
       },
     ],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Y2S Cabs & Travels | Premium Luxury Taxi Booking",
     description: "Book premium luxury taxis for airport transfers, outstation, and local rides.",
-    images: ["/logo.png"],
+    images: ["/metalogo.jpeg"],
   },
 };
 
