@@ -25,11 +25,11 @@ export default function Navbar() {
       transition={{ duration: 0.35, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 h-[88px] transition-colors duration-300 ${scrolled ? 'bg-[#111111]/95 backdrop-blur-md shadow-md border-b border-[rgba(255,255,255,0.05)]' : 'bg-transparent'}`}
     >
-      <div className="relative w-full h-full max-w-[1440px] mx-auto flex items-center justify-between px-[24px]">
+      <div className="relative w-full h-full max-w-[1440px] mx-auto flex items-center justify-between px-[16px] md:px-[32px]">
         {/* Logo */}
         <Link 
           href="/" 
-          className="relative w-[90px] h-[85px] mt-[10px]" 
+          className="relative w-[90px] h-[85px] mt-[10px] flex-shrink-0" 
         >
           <Image
             src="/logo.png"
@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Mobile icon call button */}
           <a
             href="tel:+919790279217"
-            className="flex sm:hidden items-center justify-center w-[46px] h-[46px] rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors"
+            className="flex sm:hidden items-center justify-center w-[46px] h-[46px] flex-shrink-0 rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors"
             aria-label="Call Us"
           >
             <Phone className="w-[20px] h-[20px]" strokeWidth={2} />
