@@ -4,7 +4,7 @@ import { PhoneCall, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="w-full bg-[#111111] py-[80px] px-[24px]">
+    <section className="w-full bg-[#111111] py-[80px] px-[24px] overflow-hidden">
       <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
         
         {/* Section Header */}

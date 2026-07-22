@@ -27,7 +27,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="w-full bg-[#0a0a0a] py-[80px] px-[24px]">
+    <section className="w-full bg-[#0a0a0a] py-[80px] px-[24px] overflow-hidden">
       <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
         
         {/* Section Header */}

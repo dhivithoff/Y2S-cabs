@@ -50,11 +50,11 @@ export default function Navbar() {
         </nav>
 
         {/* Call Button (Right Corner) */}
-        <div className="flex items-center">
+        <div className="flex items-center absolute right-[16px] md:static md:right-auto">
           {/* Desktop/Tablet explicit call button */}
           <a
             href="tel:+919790279217"
-            className="hidden sm:flex items-center gap-[10px] bg-[rgba(197,161,93,0.1)] border border-[#C5A15D] text-[#C5A15D] h-[46px] px-[20px] rounded-full font-sans font-medium hover:bg-[#C5A15D] hover:text-[#111111] transition-all"
+            className="hidden md:flex items-center gap-[10px] bg-[rgba(197,161,93,0.1)] border border-[#C5A15D] text-[#C5A15D] h-[46px] px-[20px] rounded-full font-sans font-medium hover:bg-[#C5A15D] hover:text-[#111111] transition-all"
           >
             <Phone className="w-[18px] h-[18px]" strokeWidth={2} />
             <span className="text-[15px]">+91 97902 79217</span>
@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Mobile icon call button */}
           <a
             href="tel:+919790279217"
-            className="flex sm:hidden items-center justify-center w-[46px] h-[46px] flex-shrink-0 rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors"
+            className="flex md:hidden items-center justify-center w-[46px] h-[46px] flex-shrink-0 rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors shadow-md"
             aria-label="Call Us"
           >
             <Phone className="w-[20px] h-[20px]" strokeWidth={2} />

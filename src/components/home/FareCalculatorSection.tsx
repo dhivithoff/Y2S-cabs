@@ -37,7 +37,7 @@ export default function FareCalculatorSection() {
   };
 
   return (
-    <section className="relative bg-[#0a0a0a] w-full py-[80px] px-[24px] md:px-[56px] flex flex-col items-center">
+    <section className="relative bg-[#0a0a0a] w-full py-[80px] px-[24px] md:px-[56px] flex flex-col items-center overflow-hidden">
       
       {/* Background Image at Bottom */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[610px] h-[300px] z-0 pointer-events-none opacity-30">
@@ -131,23 +131,24 @@ export default function FareCalculatorSection() {
         {/* Results Card */}
         <div className="w-full bg-[#111111] rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[36px] flex flex-col mb-[18px]">
           {/* Top Metrics */}
-          <div className="flex items-center w-full mb-[40px]">
+          <div className="flex flex-col md:flex-row items-center w-full mb-[40px] gap-[24px] md:gap-0">
             {/* Distance */}
             <div className="flex items-center gap-[16px] flex-1 justify-center">
               <MapPin className="w-[42px] h-[42px] text-[#C5A15D]" strokeWidth={1.5} />
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Estimated Distance</span>
                 <span className="font-sans font-semibold text-[30px] text-white">{distance} km</span>
               </div>
             </div>
             
             {/* Divider */}
-            <div className="w-[1px] h-[64px] bg-[rgba(255,255,255,0.08)] mx-[32px]"></div>
+            <div className="hidden md:block w-[1px] h-[64px] bg-[rgba(255,255,255,0.08)] mx-[32px]"></div>
+            <div className="md:hidden w-full h-[1px] bg-[rgba(255,255,255,0.08)]"></div>
             
             {/* Time */}
             <div className="flex items-center gap-[16px] flex-1 justify-center">
               <Clock className="w-[42px] h-[42px] text-[#C5A15D]" strokeWidth={1.5} />
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Estimated Time</span>
                 <span className="font-sans font-semibold text-[30px] text-white">{time} mins</span>
               </div>
@@ -159,7 +160,7 @@ export default function FareCalculatorSection() {
             <span className="font-serif font-bold text-[82px] leading-[84px] text-[#C5A15D] mb-[12px]">₹{estimatedFare.toLocaleString('en-IN')}</span>
             <span className="font-sans font-normal text-[18px] text-[#D3D3D1] mb-[16px]">Includes base fare, taxes, and estimated distance.</span>
             
-            <div className="flex items-center gap-[8px]">
+            <div className="flex flex-col sm:flex-row items-center gap-[8px]">
               <ShieldCheck className="w-[18px] h-[18px] text-[#BEBEB8]" />
               <span className="font-sans font-normal text-[18px] text-[#BEBEB8]">No hidden charges. Verified drivers.</span>
             </div>

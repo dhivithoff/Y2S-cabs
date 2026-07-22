@@ -31,7 +31,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex flex-col"
         >
-          <h1 className="font-serif font-bold text-[52px] leading-[1.05] tracking-[-1px] mb-[20px]">
+          <h1 className="font-serif font-bold text-[42px] sm:text-[52px] leading-[1.05] tracking-[-1px] mb-[20px]">
             <span className="block text-[#F5F5F5]">Ride in</span>
             <span className="block text-[#C5A15D]">Prestige.</span>
           </h1>

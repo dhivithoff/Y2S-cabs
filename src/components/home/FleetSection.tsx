@@ -41,7 +41,7 @@ export default function FleetSection() {
   ];
 
   return (
-    <section id="fleet" className="bg-[#0a0a0a] pt-[80px] pb-[80px] px-[24px] lg:px-[40px] flex flex-col items-center">
+    <section id="fleet" className="bg-[#0a0a0a] pt-[80px] pb-[80px] px-[24px] lg:px-[40px] flex flex-col items-center overflow-hidden">
       <div className="w-full flex flex-col items-center max-w-[680px]">
         
         {/* Section Header */}
