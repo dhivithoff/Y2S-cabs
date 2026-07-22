@@ -74,7 +74,6 @@ export default function Footer() {
           <div className="flex gap-6 text-sm">
             <Link href="/privacy-policy" className="text-secondary-foreground hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-secondary-foreground hover:text-primary transition-colors">Terms of Service</Link>
-            <Link href="/sitemap.xml" className="text-secondary-foreground hover:text-primary transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function ServicesSection() {
         { name: "On Time", icon: <Briefcase className="w-3 h-3 text-[#A3A3A3]" /> },
         { name: "Safe", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
-      image: "/hero-mobile-bg.png", // Replace with an actual airport background image later
+      image: "/airport.png",
       link: "/book"
     },
     {
@@ -27,7 +27,7 @@ export default function ServicesSection() {
         { name: "Anytime", icon: <MapPin className="w-3 h-3 text-[#A3A3A3]" /> },
         { name: "24/7", icon: <Clock className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
-      image: "/hero-mobile-bg.png", // Replace with an actual local city background image later
+      image: "/temple.png",
       link: "/book"
     },
     {
@@ -39,7 +39,7 @@ export default function ServicesSection() {
         { name: "Long Distance", icon: <Car className="w-3 h-3 text-[#A3A3A3]" /> },
         { name: "Premium", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
-      image: "/hero-mobile-bg.png", // Replace with an actual highway background image later
+      image: "/outstation.png",
       link: "/book"
     },
     {
@@ -51,7 +51,7 @@ export default function ServicesSection() {
         { name: "Cost Effective", icon: <Calendar className="w-3 h-3 text-[#A3A3A3]" /> },
         { name: "No Return Fare", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
-      image: "/hero-mobile-bg.png", // Replace with an actual road background image later
+      image: "/oneway.png",
       link: "/book"
     }
   ];
@@ -140,7 +140,7 @@ export default function ServicesSection() {
           {/* Background Image - Full cover for mobile, right side for desktop */}
           <div className="absolute inset-0 md:right-0 md:left-auto md:w-[60%] md:h-full z-0">
              <Image 
-                src="/innova.png" 
+                src="/roundtrip.png" 
                 alt="Round Trip Vehicle"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
