@@ -61,54 +61,49 @@ export default function HeroSection() {
             <ArrowRight className="w-[18px] h-[18px] text-[#111111]" strokeWidth={1.5} />
           </motion.a>
 
-          <div className="flex items-center gap-[8px]">
+          <div className="flex items-center gap-[8px] mb-[24px]">
             <ShieldCheck className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
             <span className="font-sans text-[13px] text-[#BDBDB8]">Trusted by thousands</span>
           </div>
-        </motion.div>
 
-        {/* Bottom Trust Card */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="absolute left-[24px] right-[24px] bottom-[40px] md:bottom-[60px] rounded-[24px] bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.06)] p-[24px] z-20 shadow-2xl"
-        >
-          <div className="grid grid-cols-4 gap-0 relative h-full">
+          {/* Inline Trust Features */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-[16px] md:gap-[24px]">
             
-            {/* Dividers */}
-            <div className="absolute top-[10%] bottom-[10%] left-[25%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
-            <div className="absolute top-[10%] bottom-[10%] left-[50%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
-            <div className="absolute top-[10%] bottom-[10%] left-[75%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
-
             {/* Feature 1 */}
-            <div className="flex flex-col items-center justify-center text-center px-[4px]">
-              <ShieldCheck className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
-              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">Safe & Secure</span>
-              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Verified Drivers</span>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-[8px] mb-[4px]">
+                <ShieldCheck className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
+                <span className="font-sans font-medium text-[12px] text-[#F5F5F5]">Safe & Secure</span>
+              </div>
+              <span className="font-sans font-normal text-[11px] text-[#A3A3A3]">Verified Drivers</span>
             </div>
 
             {/* Feature 2 */}
-            <div className="flex flex-col items-center justify-center text-center px-[4px]">
-              <Clock className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
-              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">On Time</span>
-              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Every Time</span>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-[8px] mb-[4px]">
+                <Clock className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
+                <span className="font-sans font-medium text-[12px] text-[#F5F5F5]">On Time</span>
+              </div>
+              <span className="font-sans font-normal text-[11px] text-[#A3A3A3]">Every Time</span>
             </div>
 
             {/* Feature 3 */}
-            <div className="flex flex-col items-center justify-center text-center px-[4px]">
-              <MapPin className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
-              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">Across City</span>
-              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">& Outstation</span>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-[8px] mb-[4px]">
+                <MapPin className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
+                <span className="font-sans font-medium text-[12px] text-[#F5F5F5]">Across City</span>
+              </div>
+              <span className="font-sans font-normal text-[11px] text-[#A3A3A3]">& Outstation</span>
             </div>
 
             {/* Feature 4 */}
-            <div className="flex flex-col items-center justify-center text-center px-[4px]">
-              <Headphones className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
-              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">24/7 Support</span>
-              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Always Available</span>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-[8px] mb-[4px]">
+                <Headphones className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
+                <span className="font-sans font-medium text-[12px] text-[#F5F5F5]">24/7 Support</span>
+              </div>
+              <span className="font-sans font-normal text-[11px] text-[#A3A3A3]">Always Available</span>
             </div>
-
           </div>
         </motion.div>
       </div>

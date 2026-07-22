@@ -29,13 +29,13 @@ export default function Navbar() {
         {/* Logo */}
         <Link 
           href="/" 
-          className="relative w-[118px] h-[110px] mt-[20px]" 
+          className="relative w-[90px] h-[85px] mt-[10px]" 
         >
           <Image
             src="/logo.png"
             alt="Y2S Cabs Logo"
             fill
-            sizes="118px"
+            sizes="90px"
             className="object-contain object-top"
             priority
           />
