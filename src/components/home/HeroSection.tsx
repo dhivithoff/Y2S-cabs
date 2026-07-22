@@ -44,7 +44,7 @@ export default function HeroSection() {
             Safe. Reliable. Always on time.
           </p>
 
-          <div className="h-[80px] md:h-[140px]" /> {/* Spacer to move button down */}
+          <div className="h-[140px] md:h-[220px]" /> {/* Spacer to move button down */}
 
           <motion.a 
             href="/book"
