@@ -10,7 +10,7 @@ export default function FloatingButtons() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
-        href="tel:+12345678900"
+        href="tel:+919790279217"
         className="w-14 h-14 rounded-full bg-foreground text-background flex items-center justify-center shadow-[0_4px_14px_0_rgba(0,0,0,0.39)] hover:scale-110 transition-transform"
         aria-label="Call Now"
       >
@@ -21,7 +21,7 @@ export default function FloatingButtons() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 260, damping: 20 }}
-        href="https://wa.me/12345678900?text=Hi%2C%20I%20would%20like%20to%20book%20a%20taxi."
+        href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20taxi."
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:scale-110 transition-transform relative"

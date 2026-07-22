@@ -53,15 +53,15 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3 text-secondary-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>123 Luxury Drive, Business District, NY 10001</span>
+                <span>1/110-61A, SENTHIL NAGAR, SEERANAMPALAYAM, IDUVAI, TIRUPPUR</span>
               </li>
               <li className="flex items-center gap-3 text-secondary-foreground">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+12345678900" className="hover:text-primary transition-colors">+1 234 567 8900</a>
+                <a href="tel:+919790279217" className="hover:text-primary transition-colors">+91 97902 79217</a>
               </li>
               <li className="flex items-center gap-3 text-secondary-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:booking@y2scabs.com" className="hover:text-primary transition-colors">booking@y2scabs.com</a>
+                <a href="mailto:y2scabstravels3024@gmail.com" className="hover:text-primary transition-colors">y2scabstravels3024@gmail.com</a>
               </li>
             </ul>
           </div>

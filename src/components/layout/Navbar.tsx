@@ -39,7 +39,7 @@ export default function Navbar() {
           style={{ top: '18px', right: '24px' }}
         >
           <a
-            href="tel:+12345678900"
+            href="tel:+919790279217"
             className="flex items-center justify-center w-[52px] h-[52px] rounded-[16px] border border-[#8F7443] bg-transparent"
             aria-label="Call Us"
           >

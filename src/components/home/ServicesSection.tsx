@@ -154,7 +154,7 @@ export default function ServicesSection() {
           
           {/* CTA Button */}
           <a 
-            href="https://wa.me/12345678900?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20custom%20trip."
+            href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20custom%20trip."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full lg:w-[350px] h-[64px] bg-[#C7A35E] rounded-[16px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors flex-shrink-0 shadow-[0_6px_16px_rgba(0,0,0,0.12)]"

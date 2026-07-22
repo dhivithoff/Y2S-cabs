@@ -38,8 +38,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Phone</h3>
-                    <a href="tel:+12345678900" className="text-secondary-foreground hover:text-primary transition-colors text-lg">
-                      +1 234 567 8900
+                    <a href="tel:+919790279217" className="text-secondary-foreground hover:text-primary transition-colors text-lg">
+                      +91 97902 79217
                     </a>
                   </div>
                 </div>
@@ -51,12 +51,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-lg mb-1">WhatsApp</h3>
                     <a 
-                      href="https://wa.me/12345678900" 
+                      href="https://wa.me/919790279217" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-secondary-foreground hover:text-[#25D366] transition-colors text-lg"
                     >
-                      +1 234 567 8900
+                      +91 97902 79217
                     </a>
                   </div>
                 </div>
@@ -67,8 +67,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Email</h3>
-                    <a href="mailto:booking@y2scabs.com" className="text-secondary-foreground hover:text-primary transition-colors text-lg">
-                      booking@y2scabs.com
+                    <a href="mailto:y2scabstravels3024@gmail.com" className="text-secondary-foreground hover:text-primary transition-colors text-lg">
+                      y2scabstravels3024@gmail.com
                     </a>
                   </div>
                 </div>
@@ -83,9 +83,9 @@ export default function ContactPage() {
                   <h3 className="text-2xl font-serif font-bold">Office Address</h3>
                 </div>
                 <p className="text-secondary-foreground text-lg leading-relaxed pl-9">
-                  123 Luxury Drive,<br />
-                  Business District,<br />
-                  New York, NY 10001
+                  1/110-61A, SENTHIL NAGAR,<br />
+                  SEERANAMPALAYAM, IDUVAI,<br />
+                  TIRUPPUR
                 </p>
               </div>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
 
               <div className="mt-10 pt-8 border-t border-border">
                 <a 
-                  href="tel:+12345678900"
+                  href="tel:+919790279217"
                   className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-lg"
                 >
                   <PhoneCall className="w-5 h-5" />

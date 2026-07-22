@@ -33,7 +33,7 @@ export default function FareCalculator() {
 
   const handleWhatsApp = () => {
     const text = `Hi, I would like to get an estimate.\n\nPickup: ${pickup}\nDropoff: ${dropoff}\nVehicle: ${vehicle === 'sedan' ? 'Luxury Sedan' : 'Premium SUV'}\nEstimated Fare: ₹${estimatedFare}\n\nPlease confirm availability.`;
-    window.open(`https://wa.me/12345678900?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/919790279217?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (

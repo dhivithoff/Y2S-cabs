@@ -31,7 +31,7 @@ export default function BookRide() {
 
   const handleWhatsApp = () => {
     const text = `*🚖 New Booking Request*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Trip Type:* ${formData.tripType}\n*Pickup:* ${formData.pickup}\n*Destination:* ${formData.destination}\n*Vehicle:* ${formData.vehicle}\n*Date:* ${formData.date}\n*Time:* ${formData.time}\n*Notes:* ${formData.notes}\n\nPlease confirm my booking.`;
-    window.open(`https://wa.me/12345678900?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/919790279217?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
