@@ -1,4 +1,6 @@
-import { MessageCircle, ArrowRight, ArrowUpRight, CheckCircle2, ArrowDownUp } from "lucide-react";
+"use client";
+
+import { MessageCircle, ArrowRight, Plane, MapPin, Map, Navigation, RefreshCw, Briefcase, ShieldCheck, Clock, Calendar, Car } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -6,163 +8,217 @@ export default function ServicesSection() {
   const services = [
     {
       title: "Airport Transfer",
-      description: "Punctual and comfortable rides to and from the airport. Never miss a flight.",
+      description: "Hassle-free airport pickups & drops.",
       category: "Airport",
-      features: ["On Time", "Premium"],
-      image: "/hero-mobile-bg.png", // Placeholder
-      link: "/services#airport"
+      categoryIcon: <Plane className="w-4 h-4 text-[#C5A15D]" />,
+      features: [
+        { name: "On Time", icon: <Briefcase className="w-3 h-3 text-[#A3A3A3]" /> },
+        { name: "Safe", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
+      ],
+      image: "/hero-mobile-bg.png", // Replace with an actual airport background image later
+      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20an%20airport%20transfer."
     },
     {
       title: "Local Taxi",
-      description: "Navigate the city in style. Perfect for shopping, meetings, or town exploration.",
+      description: "Comfortable rides within the city.",
       category: "Local",
-      features: ["Safe", "24/7"],
-      image: "/hero-mobile-bg.png", // Placeholder
-      link: "/services#local"
+      categoryIcon: <MapPin className="w-4 h-4 text-[#C5A15D]" />,
+      features: [
+        { name: "Anytime", icon: <MapPin className="w-3 h-3 text-[#A3A3A3]" /> },
+        { name: "24/7", icon: <Clock className="w-3 h-3 text-[#A3A3A3]" /> }
+      ],
+      image: "/hero-mobile-bg.png", // Replace with an actual local city background image later
+      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20local%20taxi."
     },
     {
       title: "Outstation Taxi",
-      description: "Explore new cities with our premium cabs. Safe, comfortable, and driven by experts.",
+      description: "Explore nearby cities with complete comfort.",
       category: "Outstation",
-      features: ["Verified", "Safe"],
-      image: "/hero-mobile-bg.png", // Placeholder
-      link: "/services#outstation"
+      categoryIcon: <Map className="w-4 h-4 text-[#C5A15D]" />,
+      features: [
+        { name: "Long Distance", icon: <Car className="w-3 h-3 text-[#A3A3A3]" /> },
+        { name: "Premium", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
+      ],
+      image: "/hero-mobile-bg.png", // Replace with an actual highway background image later
+      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20an%20outstation%20taxi."
     },
     {
       title: "One Way Trip",
-      description: "Pay only for the drop. Economical premium travel for your one-way journeys.",
+      description: "Flexible one-way travel options.",
       category: "One Way",
-      features: ["Affordable", "Fast"],
-      image: "/hero-mobile-bg.png", // Placeholder
-      link: "/services#oneway"
+      categoryIcon: <Navigation className="w-4 h-4 text-[#C5A15D]" />,
+      features: [
+        { name: "Cost Effective", icon: <Calendar className="w-3 h-3 text-[#A3A3A3]" /> },
+        { name: "No Return Fare", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
+      ],
+      image: "/hero-mobile-bg.png", // Replace with an actual road background image later
+      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20one-way%20trip."
     }
   ];
 
   return (
-    <section className="bg-[#151514] pt-[64px] pb-[56px] px-[24px] lg:px-[40px] flex flex-col items-center">
-      <div className="w-full flex flex-col items-center max-w-[860px]">
+    <section className="bg-[#0a0a0a] pt-[80px] pb-[80px] px-[24px] lg:px-[40px] flex flex-col items-center">
+      <div className="w-full flex flex-col items-center max-w-[800px]">
         
         {/* Header Layout Structure */}
-        <div className="w-full flex flex-col items-start text-left mb-[44px]">
+        <div className="w-full flex flex-col items-center text-center mb-[56px]">
           {/* Service Badge */}
-          <div className="w-[182px] h-[48px] rounded-full bg-[rgba(197,161,93,0.08)] border border-[#C7A35E] flex items-center justify-center mb-[24px]">
-            <span className="font-sans font-medium text-[18px] tracking-[7px] text-[#C7A35E] uppercase ml-[7px]">OUR SERVICES</span>
+          <div className="w-[182px] h-[36px] rounded-full bg-transparent border border-[#C5A15D]/40 flex items-center justify-center mb-[24px] shadow-[0_0_15px_rgba(197,161,93,0.15)]">
+            <span className="font-sans font-medium text-[13px] tracking-[5px] text-[#C5A15D] uppercase ml-[5px]">OUR SERVICES</span>
           </div>
 
           {/* Heading */}
-          <h2 className="font-serif font-bold text-[48px] lg:text-[66px] leading-[1.1] lg:leading-[68px] tracking-[-1px] w-full max-w-[620px] mb-[24px]">
-            <span className="block text-[#F6F6F4]">Travel</span>
-            <span className="block text-[#C7A35E]">Your Way</span>
+          <h2 className="font-serif font-bold text-[48px] lg:text-[56px] leading-[1.1] tracking-[-1px] mb-[20px]">
+            <span className="text-[#F5F5F5]">Travel </span>
+            <span className="text-[#C5A15D]">Your Way</span>
           </h2>
 
           {/* Description */}
-          <p className="font-sans font-normal text-[18px] leading-[34px] w-full max-w-[600px] text-[#D2D2CF]">
+          <p className="font-sans font-normal text-[18px] leading-[30px] w-full max-w-[450px] text-[#D2D2CF]">
             Choose the service that suits your journey. We'll take care of the rest.
           </p>
         </div>
 
-        {/* Service Grid */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-[24px] gap-y-[28px] mb-[28px]">
+        {/* Service Grid - Compact Size */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-[24px] mb-[24px]">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="w-full lg:w-[415px] h-auto lg:h-[470px] rounded-[28px] bg-[#1F1F1D] border border-[rgba(255,255,255,0.05)] shadow-[0_12px_28px_rgba(0,0,0,0.18)] overflow-hidden relative group flex flex-col"
+              className="w-full h-[360px] rounded-[24px] bg-[#111111] overflow-hidden relative group flex flex-col border border-[rgba(255,255,255,0.05)]"
             >
-              {/* Card Hero Image */}
-              <div className="w-full h-[220px] relative flex-shrink-0">
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-60 group-hover:opacity-80"
-                />
-                
-                {/* Category Badge */}
-                <div className="absolute top-[18px] left-[18px] w-[128px] h-[42px] rounded-full bg-[rgba(28,28,26,0.90)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center z-10">
-                  <span className="font-sans font-medium text-[16px] text-white">{service.category}</span>
+              {/* Background Image full cover */}
+              <Image 
+                src={service.image} 
+                alt={service.title} 
+                fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-0"
+              />
+              
+              {/* Gradient Overlay bottom to top */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-transparent z-10"></div>
+
+              <div className="relative z-20 flex flex-col h-full p-[24px]">
+                {/* Top Badge */}
+                <div className="w-max h-[32px] rounded-full bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center px-[12px] gap-[8px]">
+                  {service.categoryIcon}
+                  <span className="font-sans font-medium text-[13px] text-[#F5F5F5]">{service.category}</span>
                 </div>
-              </div>
-
-              {/* Service Details */}
-              <div className="flex flex-col flex-grow px-[22px] pt-[22px] pb-[32px] relative">
-                <h3 className="font-serif font-bold text-[34px] leading-[38px] text-[#F6F6F4] mb-[12px]">
-                  {service.title}
-                </h3>
                 
-                <p className="font-sans font-normal text-[16px] leading-[30px] w-full max-w-[290px] text-[#D2D2CF] mb-[24px]">
-                  {service.description}
-                </p>
+                {/* Spacer */}
+                <div className="flex-grow"></div>
 
-                {/* Feature Pills */}
-                <div className="flex items-center gap-[12px] mt-auto">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="h-[34px] rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.05)] px-[16px] flex items-center justify-center gap-[6px]">
-                      <CheckCircle2 className="w-[16px] h-[16px] text-[#C7A35E]" />
-                      <span className="font-sans text-[14px] text-[#D2D2CF]">{feature}</span>
+                {/* Bottom Content */}
+                <div>
+                  <h3 className="font-serif font-bold text-[28px] text-[#F5F5F5] mb-[8px]">
+                    {service.title}
+                  </h3>
+                  <p className="font-sans font-normal text-[15px] leading-[22px] text-[#A3A3A3] mb-[20px] max-w-[220px]">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features & Arrow */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-[8px]">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="h-[28px] rounded-full bg-transparent border border-[rgba(255,255,255,0.15)] px-[12px] flex items-center gap-[6px]">
+                          {feature.icon}
+                          <span className="font-sans font-normal text-[12px] text-[#D2D2CF]">{feature.name}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                    
+                    <Link 
+                      href={service.link}
+                      target="_blank"
+                      className="w-[42px] h-[42px] rounded-full border border-[#C5A15D] flex items-center justify-center hover:bg-[#C5A15D]/10 transition-colors flex-shrink-0"
+                    >
+                      <ArrowRight className="w-[18px] h-[18px] text-[#C5A15D]" />
+                    </Link>
+                  </div>
                 </div>
-
-                {/* Arrow Button */}
-                <Link 
-                  href={service.link}
-                  className="absolute bottom-[22px] right-[22px] w-[62px] h-[62px] rounded-full border border-[#C7A35E] bg-transparent flex items-center justify-center hover:bg-[#C7A35E]/10 transition-colors z-20"
-                >
-                  <ArrowUpRight className="w-[24px] h-[24px] text-[#C7A35E]" />
-                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Featured Wide Card (Round Trip) */}
-        <div className="w-full lg:w-[860px] h-auto lg:h-[220px] rounded-[28px] bg-[#1F1F1D] border border-[rgba(255,255,255,0.05)] shadow-[0_12px_28px_rgba(0,0,0,0.18)] flex flex-col lg:flex-row overflow-hidden mb-[28px]">
-          {/* Left Content (45%) */}
-          <div className="w-full lg:w-[45%] h-full flex flex-col justify-center p-[28px] lg:p-[40px]">
-            <div className="w-[72px] h-[72px] rounded-full bg-[rgba(197,161,93,0.08)] border border-[rgba(197,161,93,0.18)] flex items-center justify-center mb-[20px]">
-              <ArrowDownUp className="w-[34px] h-[34px] text-[#C7A35E]" />
-            </div>
-            <h3 className="font-serif font-bold text-[36px] text-[#F6F6F4] mb-[16px]">Round Trip</h3>
-            <Link 
-              href="/services#roundtrip"
-              className="flex items-center gap-[12px] text-[#C7A35E] font-sans font-medium text-[16px] hover:underline"
-            >
-              Learn More
-              <ArrowRight className="w-[20px] h-[20px]" />
-            </Link>
-          </div>
-          {/* Vehicle Image (55%) */}
-          <div className="w-full lg:w-[55%] h-[200px] lg:h-full relative">
+        {/* Round Trip Wide Card */}
+        <div className="w-full h-[220px] rounded-[24px] bg-[#111111] overflow-hidden relative group flex mb-[24px] border border-[rgba(255,255,255,0.05)]">
+          {/* Background Image on Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-[60%] z-0">
              <Image 
                 src="/innova.png" 
                 alt="Round Trip Vehicle"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover lg:object-left"
+                className="object-cover object-left"
              />
+             {/* Gradient fade to left */}
+             <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
+          </div>
+          {/* Gradient fade from bottom to top for mobile */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent md:hidden z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 flex flex-col justify-center h-full p-[24px] md:p-[32px] w-full md:w-[60%]">
+            <div className="flex items-start gap-[16px]">
+              <div className="w-[48px] h-[48px] rounded-full border border-[#C5A15D] flex items-center justify-center flex-shrink-0 mt-[4px]">
+                <RefreshCw className="w-[20px] h-[20px] text-[#C5A15D]" />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-serif font-bold text-[28px] text-[#F5F5F5] mb-[8px]">
+                  Round Trip
+                </h3>
+                <p className="font-sans font-normal text-[15px] leading-[22px] text-[#A3A3A3] mb-[16px] max-w-[240px]">
+                  Perfect for your planned return journeys.
+                </p>
+                <div className="flex gap-[8px]">
+                  <div className="h-[28px] rounded-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.15)] px-[12px] flex items-center gap-[6px]">
+                    <Calendar className="w-[12px] h-[12px] text-[#A3A3A3]" />
+                    <span className="font-sans font-normal text-[12px] text-[#D2D2CF]">Your Schedule</span>
+                  </div>
+                  <div className="h-[28px] rounded-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.15)] px-[12px] flex items-center gap-[6px]">
+                    <Car className="w-[12px] h-[12px] text-[#A3A3A3]" />
+                    <span className="font-sans font-normal text-[12px] text-[#D2D2CF]">Same Driver</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Arrow on mobile absolute bottom right, on desktop absolute bottom right of card */}
+            <Link 
+              href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20round%20trip."
+              target="_blank"
+              className="absolute bottom-[24px] md:bottom-[32px] right-[24px] md:right-[32px] w-[42px] h-[42px] rounded-full border border-[rgba(255,255,255,0.3)] bg-black/40 flex items-center justify-center hover:bg-[#C5A15D]/20 transition-colors z-20"
+            >
+              <ArrowRight className="w-[18px] h-[18px] text-[#A3A3A3]" />
+            </Link>
           </div>
         </div>
 
         {/* WhatsApp CTA Banner */}
-        <div className="w-full lg:w-[860px] h-auto lg:h-[140px] bg-[#1E1E1C] rounded-[28px] border border-[rgba(255,255,255,0.05)] p-[28px] flex flex-col lg:flex-row items-center justify-between gap-[24px]">
-          {/* Left Info */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-[8px]">
-            <h3 className="font-serif font-bold text-[34px] text-[#F6F6F4]">Need a custom trip?</h3>
-            <p className="font-sans font-normal text-[18px] text-[#CFCFCB]">Our support team is available 24/7 to assist you.</p>
-          </div>
+        <div className="w-full h-auto min-h-[100px] rounded-[24px] bg-[#111111] border border-[rgba(255,255,255,0.05)] p-[24px] flex flex-col md:flex-row items-center justify-between gap-[20px]">
           
-          {/* CTA Button */}
-          <a 
-            href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20custom%20trip."
+          <div className="flex items-center gap-[20px] w-full md:w-auto">
+            <div className="w-[52px] h-[52px] rounded-full border border-[#25D366]/30 flex items-center justify-center bg-[rgba(37,211,102,0.05)] flex-shrink-0">
+              <MessageCircle className="w-[28px] h-[28px] text-[#25D366]" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif font-bold text-[22px] text-[#F5F5F5]">Need a custom trip?</span>
+              <span className="font-sans text-[15px] text-[#A3A3A3]">Chat with us on WhatsApp</span>
+            </div>
+          </div>
+
+          <Link 
+            href="https://wa.me/919790279217"
             target="_blank"
-            rel="noopener noreferrer"
-            className="w-full lg:w-[350px] h-[64px] bg-[#C7A35E] rounded-[16px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors flex-shrink-0 shadow-[0_6px_16px_rgba(0,0,0,0.12)]"
+            className="w-full md:w-auto h-[48px] rounded-[12px] bg-[#C5A15D] px-[24px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors shadow-[0_4px_14px_rgba(197,161,93,0.3)]"
           >
-            <MessageCircle className="w-[24px] h-[24px] text-[#171717]" />
-            <span className="font-sans font-semibold text-[20px] text-[#171717]">Book on WhatsApp</span>
-            <ArrowRight className="w-[22px] h-[22px] text-[#171717]" />
-          </a>
+            <MessageCircle className="w-[18px] h-[18px] text-[#111111]" />
+            <span className="font-sans font-medium text-[15px] text-[#111111]">Book on WhatsApp</span>
+            <ArrowRight className="w-[18px] h-[18px] text-[#111111]" />
+          </Link>
+
         </div>
 
       </div>
