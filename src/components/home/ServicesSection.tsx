@@ -16,7 +16,7 @@ export default function ServicesSection() {
         { name: "Safe", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
       image: "/hero-mobile-bg.png", // Replace with an actual airport background image later
-      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20an%20airport%20transfer."
+      link: "/book"
     },
     {
       title: "Local Taxi",
@@ -28,7 +28,7 @@ export default function ServicesSection() {
         { name: "24/7", icon: <Clock className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
       image: "/hero-mobile-bg.png", // Replace with an actual local city background image later
-      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20local%20taxi."
+      link: "/book"
     },
     {
       title: "Outstation Taxi",
@@ -40,7 +40,7 @@ export default function ServicesSection() {
         { name: "Premium", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
       image: "/hero-mobile-bg.png", // Replace with an actual highway background image later
-      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20an%20outstation%20taxi."
+      link: "/book"
     },
     {
       title: "One Way Trip",
@@ -52,13 +52,13 @@ export default function ServicesSection() {
         { name: "No Return Fare", icon: <ShieldCheck className="w-3 h-3 text-[#A3A3A3]" /> }
       ],
       image: "/hero-mobile-bg.png", // Replace with an actual road background image later
-      link: "https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20one-way%20trip."
+      link: "/book"
     }
   ];
 
   return (
-    <section className="bg-[#0a0a0a] pt-[80px] pb-[80px] px-[24px] lg:px-[40px] flex flex-col items-center">
-      <div className="w-full flex flex-col items-center max-w-[800px]">
+    <section id="services" className="bg-[#0a0a0a] pt-[80px] pb-[80px] px-[24px] lg:px-[40px] flex flex-col items-center">
+      <div className="w-full flex flex-col items-center max-w-[1200px]">
         
         {/* Header Layout Structure */}
         <div className="w-full flex flex-col items-center text-center mb-[56px]">
@@ -80,7 +80,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Service Grid - Compact Size */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-[24px] mb-[24px]">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px] mb-[24px]">
           {services.map((service, index) => (
             <div 
               key={index}
@@ -130,7 +130,6 @@ export default function ServicesSection() {
                     
                     <Link 
                       href={service.link}
-                      target="_blank"
                       className="w-[42px] h-[42px] rounded-full border border-[#C5A15D] flex items-center justify-center hover:bg-[#C5A15D]/10 transition-colors flex-shrink-0"
                     >
                       <ArrowRight className="w-[18px] h-[18px] text-[#C5A15D]" />
@@ -143,24 +142,24 @@ export default function ServicesSection() {
         </div>
 
         {/* Round Trip Wide Card */}
-        <div className="w-full h-[220px] rounded-[24px] bg-[#111111] overflow-hidden relative group flex mb-[24px] border border-[rgba(255,255,255,0.05)]">
-          {/* Background Image on Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-[60%] z-0">
+        <div className="w-full h-auto md:h-[220px] rounded-[24px] bg-[#111111] overflow-hidden relative group flex flex-col md:flex-row mb-[24px] border border-[rgba(255,255,255,0.05)]">
+          {/* Background Image - On top for mobile, on right for desktop */}
+          <div className="w-full h-[180px] md:absolute md:right-0 md:top-0 md:bottom-0 md:w-[60%] md:h-full z-0 relative">
              <Image 
                 src="/innova.png" 
                 alt="Round Trip Vehicle"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-left"
+                className="object-cover md:object-left"
              />
-             {/* Gradient fade to left */}
-             <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
+             {/* Gradient fade to left on desktop */}
+             <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
+             {/* Gradient fade from bottom to top for mobile */}
+             <div className="md:hidden absolute inset-x-0 bottom-0 h-[60px] bg-gradient-to-t from-[#111111] to-transparent z-10"></div>
           </div>
-          {/* Gradient fade from bottom to top for mobile */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent md:hidden z-10"></div>
 
           {/* Content */}
-          <div className="relative z-20 flex flex-col justify-center h-full p-[24px] md:p-[32px] w-full md:w-[60%]">
+          <div className="relative z-20 flex flex-col justify-center h-full p-[24px] md:p-[32px] w-full md:w-[60%] flex-grow">
             <div className="flex items-start gap-[16px]">
               <div className="w-[48px] h-[48px] rounded-full border border-[#C5A15D] flex items-center justify-center flex-shrink-0 mt-[4px]">
                 <RefreshCw className="w-[20px] h-[20px] text-[#C5A15D]" />
@@ -187,8 +186,7 @@ export default function ServicesSection() {
             
             {/* Arrow on mobile absolute bottom right, on desktop absolute bottom right of card */}
             <Link 
-              href="https://wa.me/919790279217?text=Hi%2C%20I%20would%20like%20to%20book%20a%20round%20trip."
-              target="_blank"
+              href="/book"
               className="absolute bottom-[24px] md:bottom-[32px] right-[24px] md:right-[32px] w-[42px] h-[42px] rounded-full border border-[rgba(255,255,255,0.3)] bg-black/40 flex items-center justify-center hover:bg-[#C5A15D]/20 transition-colors z-20"
             >
               <ArrowRight className="w-[18px] h-[18px] text-[#A3A3A3]" />
@@ -210,12 +208,11 @@ export default function ServicesSection() {
           </div>
 
           <Link 
-            href="https://wa.me/919790279217"
-            target="_blank"
+            href="/book"
             className="w-full md:w-auto h-[48px] rounded-[12px] bg-[#C5A15D] px-[24px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors shadow-[0_4px_14px_rgba(197,161,93,0.3)]"
           >
             <MessageCircle className="w-[18px] h-[18px] text-[#111111]" />
-            <span className="font-sans font-medium text-[15px] text-[#111111]">Book on WhatsApp</span>
+            <span className="font-sans font-medium text-[15px] text-[#111111]">Book Now</span>
             <ArrowRight className="w-[18px] h-[18px] text-[#111111]" />
           </Link>
 

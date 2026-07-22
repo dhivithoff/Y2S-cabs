@@ -41,6 +41,14 @@ export default function Navbar() {
           />
         </Link>
 
+        {/* Center Navigation Links */}
+        <nav className="hidden md:flex items-center gap-[32px] absolute left-1/2 -translate-x-1/2">
+          <Link href="/" className="font-sans font-medium text-[15px] text-[#A3A3A3] hover:text-[#C5A15D] transition-colors">Home</Link>
+          <Link href="/#services" className="font-sans font-medium text-[15px] text-[#A3A3A3] hover:text-[#C5A15D] transition-colors">Services</Link>
+          <Link href="/#fleet" className="font-sans font-medium text-[15px] text-[#A3A3A3] hover:text-[#C5A15D] transition-colors">Fleet</Link>
+          <Link href="/book" className="font-sans font-medium text-[15px] text-[#A3A3A3] hover:text-[#C5A15D] transition-colors">Bookings</Link>
+        </nav>
+
         {/* Call Button (Right Corner) */}
         <div className="flex items-center">
           {/* Desktop/Tablet explicit call button */}

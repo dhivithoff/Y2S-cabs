@@ -3,7 +3,6 @@ import WhyChooseSection from "@/components/home/WhyChooseSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import FleetSection from "@/components/home/FleetSection";
 import FareCalculatorSection from "@/components/home/FareCalculatorSection";
-import HowItWorksSection from "@/components/home/HowItWorksSection";
 import CustomerReviewsSection from "@/components/home/CustomerReviewsSection";
 import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/layout/Footer";
@@ -21,7 +20,6 @@ export default function Home() {
       <ServicesSection />
       <FleetSection />
       <FareCalculatorSection />
-      <HowItWorksSection />
       <CustomerReviewsSection />
       <ContactSection />
       <Footer />

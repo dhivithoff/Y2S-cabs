@@ -39,35 +39,43 @@ export default function CustomerReviewsSection() {
           </h2>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] w-full">
-          {reviews.map((review, index) => (
-            <div 
-              key={index} 
-              className="flex flex-col text-left p-[40px] rounded-[24px] bg-[#111111] border border-[rgba(255,255,255,0.03)] relative overflow-hidden group hover:border-[#C5A15D]/30 transition-colors duration-300"
-            >
-              <Quote className="absolute top-[32px] right-[32px] w-[64px] h-[64px] text-[rgba(197,161,93,0.05)] group-hover:text-[rgba(197,161,93,0.1)] transition-colors duration-300" />
-              
-              <div className="flex gap-[4px] mb-[24px]">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-[18px] h-[18px] text-[#C5A15D] fill-[#C5A15D]" />
-                ))}
+        {/* Marquee Wrapper */}
+        <div className="w-full overflow-hidden relative flex">
+          
+          {/* Gradient Masks for smooth fading edges */}
+          <div className="absolute inset-y-0 left-0 w-[40px] md:w-[100px] bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-[40px] md:w-[100px] bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+
+          <div className="flex w-max animate-marquee gap-[32px] hover:[animation-play-state:paused]">
+            {/* Double the reviews to create a seamless loop */}
+            {[...reviews, ...reviews, ...reviews].map((review, index) => (
+              <div 
+                key={index} 
+                className="flex flex-col text-left p-[40px] rounded-[24px] bg-[#111111] border border-[rgba(255,255,255,0.03)] relative overflow-hidden group hover:border-[#C5A15D]/30 transition-colors duration-300 w-[350px] md:w-[400px] flex-shrink-0"
+              >
+                <Quote className="absolute top-[32px] right-[32px] w-[64px] h-[64px] text-[rgba(197,161,93,0.05)] group-hover:text-[rgba(197,161,93,0.1)] transition-colors duration-300" />
+                
+                <div className="flex gap-[4px] mb-[24px]">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-[18px] h-[18px] text-[#C5A15D] fill-[#C5A15D]" />
+                  ))}
+                </div>
+                
+                <p className="font-sans font-normal text-[16px] leading-[28px] text-[#D2D2CF] mb-[32px] flex-grow italic">
+                  "{review.content}"
+                </p>
+                
+                <div className="flex flex-col">
+                  <span className="font-sans font-bold text-[18px] text-[#F5F5F5]">
+                    {review.name}
+                  </span>
+                  <span className="font-sans text-[14px] text-[#A3A3A3]">
+                    {review.role}
+                  </span>
+                </div>
               </div>
-              
-              <p className="font-sans font-normal text-[16px] leading-[28px] text-[#D2D2CF] mb-[32px] flex-grow italic">
-                "{review.content}"
-              </p>
-              
-              <div className="flex flex-col">
-                <span className="font-sans font-bold text-[18px] text-[#F5F5F5]">
-                  {review.name}
-                </span>
-                <span className="font-sans text-[14px] text-[#A3A3A3]">
-                  {review.role}
-                </span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>

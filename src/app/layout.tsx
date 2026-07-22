@@ -3,7 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import FloatingButtons from "@/components/ui-custom/FloatingButtons";
-import BottomNav from "@/components/layout/BottomNav";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -35,7 +35,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 w-full">{children}</main>
         <FloatingButtons />
-        <BottomNav />
+        <MobileBottomNav />
       </body>
     </html>
   );

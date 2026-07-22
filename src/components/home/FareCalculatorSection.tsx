@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MapPin, Navigation, Car, MessageCircle, ArrowRight, ArrowDownUp, ShieldCheck, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FareCalculatorSection() {
   const [pickup, setPickup] = useState("");
@@ -73,6 +74,7 @@ export default function FareCalculatorSection() {
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">PICKUP LOCATION</span>
               <input 
+                suppressHydrationWarning
                 type="text" 
                 placeholder="Enter pickup address"
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
@@ -84,6 +86,7 @@ export default function FareCalculatorSection() {
 
           {/* Swap Button (Absolute position over the gap) */}
           <button 
+            suppressHydrationWarning
             onClick={handleSwap}
             className="absolute right-[48px] top-[99px] w-[52px] h-[52px] rounded-full bg-[#111111] border-2 border-[#C5A15D] flex items-center justify-center z-10 hover:bg-[#1a1a1a] transition-colors"
             aria-label="Swap locations"
@@ -97,6 +100,7 @@ export default function FareCalculatorSection() {
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">DROPOFF LOCATION</span>
               <input 
+                suppressHydrationWarning
                 type="text" 
                 placeholder="Enter destination"
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
@@ -112,6 +116,7 @@ export default function FareCalculatorSection() {
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">VEHICLE TYPE</span>
               <select 
+                suppressHydrationWarning
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white appearance-none cursor-pointer"
                 value={vehicle}
                 onChange={(e) => setVehicle(e.target.value)}
@@ -161,15 +166,13 @@ export default function FareCalculatorSection() {
           </div>
 
           {/* CTA Button */}
-          <button 
-            onClick={handleWhatsApp}
-            disabled={!pickup || !dropoff}
-            className="w-full h-[64px] bg-[#C5A15D] rounded-[16px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          <Link 
+            href="/book"
+            className="w-full h-[64px] bg-[#C5A15D] rounded-[16px] flex items-center justify-center gap-[12px] hover:bg-[#b89555] transition-colors shadow-[0_4px_16px_rgba(197,161,93,0.3)]"
           >
-            <MessageCircle className="w-[24px] h-[24px] text-[#111111]" />
-            <span className="font-sans font-semibold text-[20px] text-[#111111]">Request via WhatsApp</span>
+            <span className="font-sans font-semibold text-[20px] text-[#111111]">Book Now</span>
             <ArrowRight className="w-[22px] h-[22px] text-[#111111]" />
-          </button>
+          </Link>
         </div>
 
       </div>
