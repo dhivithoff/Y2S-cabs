@@ -58,12 +58,7 @@ export default function FareCalculatorSection() {
             FARE CALCULATOR
           </span>
           <div className="w-[40px] h-[2px] bg-[#C5A15D] mb-[24px]"></div>
-          <h2 className="font-serif font-bold text-[42px] leading-[1.1] tracking-[-1px] text-[#F5F5F5] max-w-[600px] text-center mb-[16px]">
-            Get an Estimate<br />Before You Ride
-          </h2>
-          <p className="font-sans font-normal text-[16px] leading-[28px] max-w-[560px] text-center text-[#D2D2CF]">
-            Plan your journey with precision. Our transparent pricing ensures you know the exact cost before you step into our premium fleet.
-          </p>
+          {/* Heading and Description Removed */}
         </div>
 
         {/* Form Card */}
