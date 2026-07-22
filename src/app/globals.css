@@ -8,17 +8,17 @@
 }
 
 :root {
-  --background: #1C1C1A;
+  --background: #0a0a0a;
   --foreground: #F6F6F4;
-  --card: #2A2A27;
+  --card: #161615;
   --card-foreground: #F6F6F4;
-  --popover: #2A2A27;
+  --popover: #161615;
   --popover-foreground: #F6F6F4;
   --primary: #C5A15D;
-  --primary-foreground: #161616;
-  --secondary: #32322F;
+  --primary-foreground: #111111;
+  --secondary: #1F1F1D;
   --secondary-foreground: #BEBEB8;
-  --muted: #8E8E88;
+  --muted: #1F1F1D;
   --muted-foreground: #BEBEB8;
   --accent: #C5A15D;
   --accent-foreground: #161616;

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
+import Footer from "@/components/layout/Footer";
 
 type TripType = "one-way" | "round-trip" | "airport" | "hourly";
 type VehicleType = "sedan" | "suv";
@@ -34,6 +35,7 @@ export default function BookRide() {
   };
 
   return (
+    <>
     <div className="flex flex-col min-h-screen bg-[#151514] pt-[120px] pb-[80px] px-[24px] items-center relative overflow-hidden">
       
       {/* Background Decor */}
@@ -351,5 +353,7 @@ export default function BookRide() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

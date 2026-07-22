@@ -14,7 +14,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="fixed top-0 w-full z-50 h-[88px] bg-[#1B1B19]/92 backdrop-blur-[18px] border-b border-white/5"
+      className="fixed top-0 w-full z-50 h-[88px] bg-transparent"
     >
       <div className="relative w-full h-full">
         {/* Logo */}
@@ -27,6 +27,7 @@ export default function Navbar() {
             src="/logo.png"
             alt="Y2S Cabs Logo"
             fill
+            sizes="118px"
             className="object-contain"
             priority
           />

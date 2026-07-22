@@ -20,7 +20,7 @@ export default function BottomNav() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 h-[82px] bg-[#1C1C1A] border-t border-white/5 pb-safe"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 h-[88px] bg-[#0a0a0a] pb-safe"
     >
       <div className="flex justify-between items-center h-full px-[24px]">
         {navItems.map((item) => {

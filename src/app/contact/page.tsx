@@ -1,5 +1,5 @@
 import { PhoneCall, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
-
+import Footer from "@/components/layout/Footer";
 export const metadata = {
   title: "Contact Us | Y2S Cabs & Travels",
   description: "Get in touch with Y2S Cabs & Travels. We are available 24/7 for booking inquiries, support, and feedback.",
@@ -7,18 +7,19 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen pt-20">
-      <div className="bg-secondary py-16 text-center border-b border-border">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Contact Us</h1>
-          <p className="text-secondary-foreground max-w-2xl mx-auto text-lg">
-            We're here to help. Reach out to us for bookings, inquiries, or support. Our team is available 24/7.
-          </p>
-        </div>
-      </div>
-
-      <section className="py-24 bg-background">
+    <>
+    <div className="flex flex-col min-h-screen pt-[120px] pb-[80px]">
+      <section className="bg-transparent">
         <div className="container mx-auto px-4 max-w-5xl">
+          <div className="flex items-center gap-[20px] mb-[20px]">
+            <span className="font-sans font-medium text-[18px] tracking-[7px] text-[#C5A15D] uppercase">SUPPORT</span>
+            <div className="w-[54px] h-[2px] bg-[#C5A15D]"></div>
+          </div>
+          
+          <h1 className="font-serif font-bold text-[48px] lg:text-[66px] leading-[1.1] text-[#F6F6F4] mb-[48px]">
+            Contact Us
+          </h1>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
             {/* Contact Info */}
@@ -120,5 +121,7 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/ui-custom/FloatingButtons";
 import BottomNav from "@/components/layout/BottomNav";
 
@@ -32,10 +31,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} dark antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden pt-[88px] pb-24 md:pb-0">
+      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden pb-[88px] md:pb-0">
         <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <main className="flex-1 w-full">{children}</main>
         <FloatingButtons />
         <BottomNav />
       </body>

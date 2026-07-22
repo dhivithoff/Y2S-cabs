@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MapPin, Navigation, Car, MessageCircle, ArrowRight, ArrowDownUp, ShieldCheck, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Footer from "@/components/layout/Footer";
 
 export default function FareCalculator() {
   const [pickup, setPickup] = useState("");
@@ -36,7 +37,8 @@ export default function FareCalculator() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#151514] w-full overflow-x-hidden pt-[72px] pb-[48px] px-[56px] flex flex-col items-center">
+    <>
+      <div className="relative min-h-screen bg-[#151514] w-full overflow-x-hidden pt-[160px] pb-[48px] px-[24px] md:px-[56px] flex flex-col items-center">
       
       {/* Background Image at Bottom */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[610px] h-[300px] z-0 pointer-events-none">
@@ -185,5 +187,7 @@ export default function FareCalculator() {
 
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

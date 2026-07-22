@@ -14,6 +14,7 @@ export default function Footer() {
                 src="/logo.png"
                 alt="Y2S Cabs Logo"
                 fill
+                sizes="150px"
                 className="object-contain"
               />
             </div>

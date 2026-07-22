@@ -1,9 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import FleetSection from "@/components/home/FleetSection";
-import TrustSection from "@/components/home/TrustSection";
 
 export const metadata = {
   title: "Y2S Cabs & Travels | Premium Luxury Taxi Booking",
@@ -12,11 +7,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <main className="relative w-full h-[100dvh] overflow-hidden bg-[#111111]">
       <HeroSection />
-      <TrustSection />
-      <ServicesSection />
-      <FleetSection />
-    </div>
+    </main>
   );
 }

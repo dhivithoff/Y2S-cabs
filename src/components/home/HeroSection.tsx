@@ -6,44 +6,41 @@ import { MessageCircle, ShieldCheck, Clock, MapPin, Headphones, ArrowRight } fro
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-x-hidden bg-[#1C1C1A]">
-      {/* Background Image - Absolute to the whole page essentially */}
-      <div className="absolute inset-0 z-0 h-[852px] w-full">
+    <section className="relative w-full h-[100dvh] overflow-hidden bg-[#0a0a0a]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/hero-mobile-bg.png"
           alt="Luxury Jaguar Background"
           fill
-          className="object-cover"
+          sizes="100vw"
+          className="object-cover object-center"
           priority
         />
+        {/* Gradients for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent h-[40%]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent mt-auto h-[50%]"></div>
       </div>
 
-      {/* Spacer for Navbar (88px) */}
-      <div className="h-[88px] relative z-10 w-full flex-shrink-0" />
-
-      {/* Hero Content Section */}
-      <div className="relative z-10 h-[760px] px-[24px] pt-[46px] w-full">
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col h-full w-full pt-[140px] px-[24px]">
+        
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className="flex flex-col relative z-20"
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex flex-col"
         >
-          <h1 
-            className="font-serif font-bold text-[64px] leading-[62px] tracking-[-1.2px] mb-[28px]"
-            style={{ width: '265px' }}
-          >
+          <h1 className="font-serif font-bold text-[52px] leading-[1.05] tracking-[-1px] mb-[20px]">
             <span className="block text-[#F5F5F5]">Ride in</span>
-            <span className="block text-[#C6A15D]">Prestige.</span>
+            <span className="block text-[#C5A15D]">Prestige.</span>
           </h1>
           
-          <div className="w-[42px] h-[2px] bg-[#C6A15D] mb-[24px]"></div>
+          <div className="w-[42px] h-[2px] bg-[#C5A15D] mb-[24px]"></div>
           
-          <p 
-            className="font-sans font-normal text-[16px] leading-[31px] text-[#D5D5D5] mb-[30px]"
-            style={{ width: '290px' }}
-          >
-            Premium taxi service for local, outstation & airport transfers.<br />
+          <p className="font-sans font-normal text-[14px] leading-[22px] text-[#D2D2CF] max-w-[280px] mb-[32px]">
+            Premium taxi service for local,<br/>
+            outstation & airport transfers.<br/>
             Safe. Reliable. Always on time.
           </p>
 
@@ -51,73 +48,68 @@ export default function HeroSection() {
             href="https://wa.me/12345678900?text=Hi%2C%20I%20would%20like%20to%20book%20a%20taxi."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-[228px] h-[56px] rounded-[14px] bg-[#C5A05C] gap-[12px] shadow-[0_6px_16px_rgba(0,0,0,0.12)]"
-            style={{ padding: '18px 22px' }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.2 }}
+            className="inline-flex items-center justify-between w-max h-[48px] rounded-[10px] bg-[#C5A15D] px-[20px] gap-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.3)] mb-[24px]"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <MessageCircle className="w-[20px] h-[20px] text-[#161616]" />
-            <span className="font-sans font-semibold text-[17px] text-[#161616]">Book on WhatsApp</span>
-            <ArrowRight className="w-[20px] h-[20px] text-[#161616]" />
+            <div className="flex items-center gap-[12px]">
+              <MessageCircle className="w-[18px] h-[18px] text-[#111111]" strokeWidth={1.5} />
+              <span className="font-sans font-medium text-[15px] text-[#111111]">Book on WhatsApp</span>
+            </div>
+            <ArrowRight className="w-[18px] h-[18px] text-[#111111]" strokeWidth={1.5} />
           </motion.a>
 
-          <div className="flex items-center gap-[6px] mt-[20px]">
-            <ShieldCheck className="w-[16px] h-[16px] text-[#BDBDB8]" />
-            <span className="font-sans text-[15px] text-[#BDBDB8]">Trusted by thousands</span>
+          <div className="flex items-center gap-[8px]">
+            <ShieldCheck className="w-[16px] h-[16px] text-[#C5A15D]" strokeWidth={1.5} />
+            <span className="font-sans text-[13px] text-[#BDBDB8]">Trusted by thousands</span>
           </div>
         </motion.div>
-        
-        {/* Jaguar Image */}
-        <div className="absolute bottom-0 right-[-18px] w-[365px] h-[235px] z-10 pointer-events-none">
-           <Image 
-             src="/hero-mobile-bg.png" 
-             alt="Jaguar"
-             fill
-             className="object-cover object-right-bottom"
-           />
-        </div>
+
+        {/* Bottom Trust Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="absolute left-[24px] right-[24px] bottom-[110px] rounded-[24px] bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.06)] p-[24px] z-20 shadow-2xl"
+        >
+          <div className="grid grid-cols-4 gap-0 relative h-full">
+            
+            {/* Dividers */}
+            <div className="absolute top-[10%] bottom-[10%] left-[25%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
+            <div className="absolute top-[10%] bottom-[10%] left-[50%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
+            <div className="absolute top-[10%] bottom-[10%] left-[75%] w-[1px] bg-[rgba(255,255,255,0.06)]"></div>
+
+            {/* Feature 1 */}
+            <div className="flex flex-col items-center justify-center text-center px-[4px]">
+              <ShieldCheck className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
+              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">Safe & Secure</span>
+              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Verified Drivers</span>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="flex flex-col items-center justify-center text-center px-[4px]">
+              <Clock className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
+              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">On Time</span>
+              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Every Time</span>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="flex flex-col items-center justify-center text-center px-[4px]">
+              <MapPin className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
+              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">Across City</span>
+              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">& Outstation</span>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="flex flex-col items-center justify-center text-center px-[4px]">
+              <Headphones className="w-[28px] h-[28px] text-[#C5A15D] mb-[12px]" strokeWidth={1.2} />
+              <span className="font-sans font-medium text-[11px] leading-[16px] text-[#F5F5F5] whitespace-nowrap mb-1">24/7 Support</span>
+              <span className="font-sans font-normal text-[10px] leading-[14px] text-[#A3A3A3] whitespace-nowrap">Always Available</span>
+            </div>
+
+          </div>
+        </motion.div>
       </div>
-
-      {/* Feature Card Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: -4 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative z-20 w-[345px] h-[145px] mx-auto rounded-[24px] bg-[#2B2B28] border border-[rgba(255,255,255,0.05)] shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-[22px] mb-[120px]"
-      >
-        <div className="flex items-center h-full gap-[18px] overflow-x-auto overflow-y-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {/* Feature 1 */}
-          <div className="flex flex-col items-center justify-center min-w-[70px]">
-            <ShieldCheck className="w-[38px] h-[38px] text-[#C6A15D] mb-[8px] stroke-[1.5]" />
-            <span className="font-sans font-medium text-[18px] text-white whitespace-nowrap leading-tight mb-1">Safe</span>
-            <span className="font-sans font-normal text-[14px] leading-[24px] text-[#BDBDB8] whitespace-nowrap">Verified</span>
-          </div>
-          <div className="w-[1px] h-full bg-[rgba(255,255,255,0.08)] flex-shrink-0"></div>
-
-          {/* Feature 2 */}
-          <div className="flex flex-col items-center justify-center min-w-[70px]">
-            <Clock className="w-[38px] h-[38px] text-[#C6A15D] mb-[8px] stroke-[1.5]" />
-            <span className="font-sans font-medium text-[18px] text-white whitespace-nowrap leading-tight mb-1">Time</span>
-            <span className="font-sans font-normal text-[14px] leading-[24px] text-[#BDBDB8] whitespace-nowrap">On Time</span>
-          </div>
-          <div className="w-[1px] h-full bg-[rgba(255,255,255,0.08)] flex-shrink-0"></div>
-
-          {/* Feature 3 */}
-          <div className="flex flex-col items-center justify-center min-w-[70px]">
-            <MapPin className="w-[38px] h-[38px] text-[#C6A15D] mb-[8px] stroke-[1.5]" />
-            <span className="font-sans font-medium text-[18px] text-white whitespace-nowrap leading-tight mb-1">City</span>
-            <span className="font-sans font-normal text-[14px] leading-[24px] text-[#BDBDB8] whitespace-nowrap">Anywhere</span>
-          </div>
-          <div className="w-[1px] h-full bg-[rgba(255,255,255,0.08)] flex-shrink-0"></div>
-
-          {/* Feature 4 */}
-          <div className="flex flex-col items-center justify-center min-w-[70px]">
-            <Headphones className="w-[38px] h-[38px] text-[#C6A15D] mb-[8px] stroke-[1.5]" />
-            <span className="font-sans font-medium text-[18px] text-white whitespace-nowrap leading-tight mb-1">24/7</span>
-            <span className="font-sans font-normal text-[14px] leading-[24px] text-[#BDBDB8] whitespace-nowrap">Support</span>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
