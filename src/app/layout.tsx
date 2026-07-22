@@ -15,8 +15,16 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://y2scabs.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://y2scabs.com"),
+  metadataBase: new URL(baseUrl),
   title: "Y2S Cabs & Travels | Premium Luxury Taxi Booking",
   description: "Book premium luxury taxis for airport transfers, outstation, and local rides. Y2S Cabs & Travels offers 24x7 service, licensed drivers, and top-class comfort.",
   icons: {
@@ -26,6 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Y2S Cabs & Travels | Premium Luxury Taxi Booking",
     description: "Book premium luxury taxis for airport transfers, outstation, and local rides. Y2S Cabs & Travels offers 24x7 service, licensed drivers, and top-class comfort.",
+    siteName: "Y2S Cabs & Travels",
     images: [
       {
         url: "/logo.png",
@@ -34,6 +43,7 @@ export const metadata: Metadata = {
         alt: "Y2S Cabs & Travels Logo",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
