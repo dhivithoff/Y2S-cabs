@@ -6,7 +6,7 @@ import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
 import Footer from "@/components/layout/Footer";
 
 type TripType = "one-way" | "round-trip" | "airport" | "hourly";
-type VehicleType = "sedan" | "suv";
+type VehicleType = "sedan" | "mini" | "suv" | "innova" | "tempo";
 
 export default function BookRide() {
   const [step, setStep] = useState(1);
@@ -16,11 +16,22 @@ export default function BookRide() {
     destination: "",
     vehicle: "sedan" as VehicleType,
     date: "",
-    time: "",
+    time: "09:00 AM",
     name: "",
     phone: "",
     notes: ""
   });
+
+  const [timeHour, setTimeHour] = useState("09");
+  const [timeMinute, setTimeMinute] = useState("00");
+  const [timePeriod, setTimePeriod] = useState("AM");
+
+  const updateTime = (hour: string, minute: string, period: string) => {
+    setTimeHour(hour);
+    setTimeMinute(minute);
+    setTimePeriod(period);
+    setFormData(prev => ({ ...prev, time: `${hour}:${minute} ${period}` }));
+  };
 
   const updateForm = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -175,40 +186,138 @@ export default function BookRide() {
                   </div>
                   <div>
                     <label className="block font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C7A35E] mb-[12px]">Pickup Time</label>
-                    <input 
-                      type="time" 
-                      className="w-full h-[64px] bg-[#252523] border border-[rgba(255,255,255,0.04)] rounded-[16px] px-[20px] font-sans text-[18px] text-white placeholder-[#BEBEB8] focus:border-[#C7A35E] focus:outline-none transition-colors color-scheme-dark"
-                      style={{ colorScheme: 'dark' }}
-                      value={formData.time}
-                      onChange={(e) => updateForm("time", e.target.value)}
-                    />
+                    <div className="flex items-center gap-[8px] sm:gap-[10px]">
+                      {/* Hours Dropdown */}
+                      <div className="relative flex-1">
+                        <select
+                          suppressHydrationWarning
+                          value={timeHour}
+                          onChange={(e) => updateTime(e.target.value, timeMinute, timePeriod)}
+                          className="w-full h-[64px] bg-[#252523] border border-[rgba(255,255,255,0.04)] rounded-[16px] px-[10px] font-sans font-medium text-[18px] text-white focus:border-[#C7A35E] focus:outline-none transition-colors appearance-none cursor-pointer text-center"
+                        >
+                          {["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"].map((h) => (
+                            <option key={h} value={h} className="bg-[#252523] text-white">
+                              {h}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <span className="font-sans font-bold text-[22px] text-[#C7A35E] flex-shrink-0">:</span>
+
+                      {/* Minutes Dropdown */}
+                      <div className="relative flex-1">
+                        <select
+                          suppressHydrationWarning
+                          value={timeMinute}
+                          onChange={(e) => updateTime(timeHour, e.target.value, timePeriod)}
+                          className="w-full h-[64px] bg-[#252523] border border-[rgba(255,255,255,0.04)] rounded-[16px] px-[10px] font-sans font-medium text-[18px] text-white focus:border-[#C7A35E] focus:outline-none transition-colors appearance-none cursor-pointer text-center"
+                        >
+                          {["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"].map((m) => (
+                            <option key={m} value={m} className="bg-[#252523] text-white">
+                              {m}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* AM / PM Toggle Buttons */}
+                      <div className="flex h-[64px] bg-[#252523] rounded-[16px] border border-[rgba(255,255,255,0.04)] p-[4px] gap-[4px] flex-shrink-0">
+                        <button
+                          type="button"
+                          suppressHydrationWarning
+                          onClick={() => updateTime(timeHour, timeMinute, "AM")}
+                          className={`px-[14px] sm:px-[18px] rounded-[12px] font-sans font-bold text-[15px] sm:text-[16px] transition-all ${
+                            timePeriod === "AM" 
+                              ? "bg-[#C7A35E] text-[#171717]" 
+                              : "text-[#BEBEB8] hover:text-white"
+                          }`}
+                        >
+                          AM
+                        </button>
+                        <button
+                          type="button"
+                          suppressHydrationWarning
+                          onClick={() => updateTime(timeHour, timeMinute, "PM")}
+                          className={`px-[14px] sm:px-[18px] rounded-[12px] font-sans font-bold text-[15px] sm:text-[16px] transition-all ${
+                            timePeriod === "PM" 
+                              ? "bg-[#C7A35E] text-[#171717]" 
+                              : "text-[#BEBEB8] hover:text-white"
+                          }`}
+                        >
+                          PM
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div>
                   <label className="block font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C7A35E] mb-[12px]">Vehicle Preference</label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px]">
                     <button
+                      type="button"
                       onClick={() => updateForm("vehicle", "sedan")}
-                      className={`p-[24px] rounded-[24px] flex flex-col items-start gap-[8px] transition-all text-left ${
+                      className={`p-[20px] rounded-[20px] flex flex-col items-start gap-[6px] transition-all text-left ${
                         formData.vehicle === "sedan" 
                           ? "bg-[rgba(197,161,93,0.08)] border-2 border-[#C7A35E]" 
                           : "bg-[#252523] border-2 border-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)]"
                       }`}
                     >
-                      <span className={`font-serif font-bold text-[28px] leading-[32px] ${formData.vehicle === "sedan" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Luxury Sedan</span>
-                      <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Up to 4 passengers • 2 Bags</span>
+                      <span className={`font-serif font-bold text-[22px] leading-[26px] ${formData.vehicle === "sedan" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Sedan</span>
+                      <span className="font-sans font-normal text-[14px] text-[#BEBEB8]">Up to 4 passengers • 1st 20km ₹500 (+₹14/km)</span>
                     </button>
+
                     <button
+                      type="button"
+                      onClick={() => updateForm("vehicle", "mini")}
+                      className={`p-[20px] rounded-[20px] flex flex-col items-start gap-[6px] transition-all text-left ${
+                        formData.vehicle === "mini" 
+                          ? "bg-[rgba(197,161,93,0.08)] border-2 border-[#C7A35E]" 
+                          : "bg-[#252523] border-2 border-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)]"
+                      }`}
+                    >
+                      <span className={`font-serif font-bold text-[22px] leading-[26px] ${formData.vehicle === "mini" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Mini</span>
+                      <span className="font-sans font-normal text-[14px] text-[#BEBEB8]">Up to 4 passengers • 1st 20km ₹400 (+₹13/km)</span>
+                    </button>
+
+                    <button
+                      type="button"
                       onClick={() => updateForm("vehicle", "suv")}
-                      className={`p-[24px] rounded-[24px] flex flex-col items-start gap-[8px] transition-all text-left ${
+                      className={`p-[20px] rounded-[20px] flex flex-col items-start gap-[6px] transition-all text-left ${
                         formData.vehicle === "suv" 
                           ? "bg-[rgba(197,161,93,0.08)] border-2 border-[#C7A35E]" 
                           : "bg-[#252523] border-2 border-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)]"
                       }`}
                     >
-                      <span className={`font-serif font-bold text-[28px] leading-[32px] ${formData.vehicle === "suv" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Premium SUV</span>
-                      <span className="font-sans font-normal text-[16px] text-[#BEBEB8]">Up to 6-7 passengers • 4 Bags</span>
+                      <span className={`font-serif font-bold text-[22px] leading-[26px] ${formData.vehicle === "suv" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>SUV</span>
+                      <span className="font-sans font-normal text-[14px] text-[#BEBEB8]">Up to 6-7 passengers • 1st 20km ₹900 (+₹18/km)</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => updateForm("vehicle", "innova")}
+                      className={`p-[20px] rounded-[20px] flex flex-col items-start gap-[6px] transition-all text-left ${
+                        formData.vehicle === "innova" 
+                          ? "bg-[rgba(197,161,93,0.08)] border-2 border-[#C7A35E]" 
+                          : "bg-[#252523] border-2 border-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)]"
+                      }`}
+                    >
+                      <span className={`font-serif font-bold text-[22px] leading-[26px] ${formData.vehicle === "innova" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Innova</span>
+                      <span className="font-sans font-normal text-[14px] text-[#BEBEB8]">Up to 7 passengers • 1st 20km ₹1000 (+₹20/km)</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => updateForm("vehicle", "tempo")}
+                      className={`p-[20px] rounded-[20px] flex flex-col items-start gap-[6px] transition-all text-left md:col-span-2 lg:col-span-1 ${
+                        formData.vehicle === "tempo" 
+                          ? "bg-[rgba(197,161,93,0.08)] border-2 border-[#C7A35E]" 
+                          : "bg-[#252523] border-2 border-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.1)]"
+                      }`}
+                    >
+                      <span className={`font-serif font-bold text-[22px] leading-[26px] ${formData.vehicle === "tempo" ? "text-[#C7A35E]" : "text-[#F6F6F4]"}`}>Tempo Traveller</span>
+                      <span className="font-sans font-normal text-[14px] text-[#BEBEB8]">Up to 12-14 passengers • 1st 20km ₹1500 (+₹26/km)</span>
                     </button>
                   </div>
                 </div>
