@@ -9,7 +9,7 @@ export default function FleetSection() {
     {
       id: "sedan",
       name: "Dzire (Sedan)",
-      image: "/dzire.png",
+      image: "/fleet-dzire-v2.jpg",
       seats: "4 Seats",
       bags: "3 Bags",
       ac: "AC",
@@ -20,7 +20,7 @@ export default function FleetSection() {
     {
       id: "mini",
       name: "Baleno (Mini)",
-      image: "/baleno.png",
+      image: "/fleet-baleno.jpg",
       seats: "4 Seats",
       bags: "2 Bags",
       ac: "AC",
@@ -29,20 +29,9 @@ export default function FleetSection() {
       perKmRate: "₹13 / km",
     },
     {
-      id: "innova",
-      name: "Innova Crysta",
-      image: "/innova.png",
-      seats: "7 Seats",
-      bags: "5 Bags",
-      ac: "AC",
-      desc: "Premium Executive & Long Distance",
-      baseFare: "₹1,000 (1st 20 km)",
-      perKmRate: "₹20 / km",
-    },
-    {
       id: "suv",
-      name: "Ertiga (SUV)",
-      image: "/ertiga.png",
+      name: "Rumion (SUV)",
+      image: "/fleet-rumion.jpg",
       seats: "6-7 Seats",
       bags: "4 Bags",
       ac: "AC",
@@ -51,9 +40,20 @@ export default function FleetSection() {
       perKmRate: "₹18 / km",
     },
     {
+      id: "innova",
+      name: "Innova Crysta",
+      image: "/fleet-innova.jpg",
+      seats: "7 Seats",
+      bags: "5 Bags",
+      ac: "AC",
+      desc: "Premium Executive & Long Distance",
+      baseFare: "₹1,000 (1st 20 km)",
+      perKmRate: "₹20 / km",
+    },
+    {
       id: "tempo",
       name: "Tempo Traveller",
-      image: "/tempo.png",
+      image: "/fleet-tempo.jpg",
       seats: "12-14 Seats",
       bags: "8 Bags",
       ac: "AC",
@@ -69,14 +69,14 @@ export default function FleetSection() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-[40px]">
-          <span className="font-sans font-medium text-[13px] tracking-[5px] text-[#C5A15D] uppercase mb-[12px]">
+          <span className="font-sans font-medium text-[13px] md:text-[15px] tracking-[5px] text-[#C5A15D] uppercase mb-[12px]">
             OUR FLEET & TARIFF
           </span>
-          <div className="w-[32px] h-[1px] bg-[#C5A15D] mb-[16px]"></div>
-          <h2 className="font-serif font-bold text-[28px] sm:text-[36px] text-[#F5F5F5] mb-[8px]">
+          <div className="w-[32px] md:w-[48px] h-[1px] bg-[#C5A15D] mb-[16px]"></div>
+          <h2 className="font-serif font-bold text-[28px] sm:text-[36px] md:text-[42px] lg:text-[46px] text-[#F5F5F5] mb-[8px]">
             Choose Your Ride
           </h2>
-          <p className="font-sans text-[14px] sm:text-[16px] text-[#A3A3A3]">
+          <p className="font-sans text-[14px] sm:text-[16px] md:text-[18px] text-[#A3A3A3]">
             Transparent pricing • Well-maintained vehicles • Professional drivers
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function FleetSection() {
                 className="w-full bg-[#111111] rounded-[20px] md:rounded-[24px] border border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row overflow-hidden group hover:border-[rgba(197,161,93,0.3)] transition-all duration-300"
               >
                 {/* Car Image (Left side) */}
-                <div className="w-full md:w-[45%] h-[200px] md:h-auto min-h-[200px] relative bg-black/60 flex-shrink-0">
+                <div className="w-full md:w-[45%] h-[210px] md:h-auto min-h-[210px] relative bg-[#0d0d0d] flex items-center justify-center p-3 flex-shrink-0">
                   <Image
                     src={car.image}
                     alt={car.name}
@@ -106,48 +106,48 @@ export default function FleetSection() {
                 </div>
 
                 {/* Vehicle Details & Tariff (Right side) */}
-                <div className="w-full md:w-[55%] flex flex-col justify-between p-[20px] sm:p-[24px] relative z-20">
+                <div className="w-full md:w-[55%] flex flex-col justify-between p-[20px] sm:p-[24px] md:p-[28px] relative z-20">
                   <div>
                     {/* Name & Desc */}
                     <div className="flex justify-between items-start mb-[6px]">
-                      <h3 className="font-serif font-bold text-[22px] sm:text-[26px] text-[#F5F5F5]">
+                      <h3 className="font-serif font-bold text-[22px] sm:text-[26px] md:text-[28px] lg:text-[30px] text-[#F5F5F5]">
                         {car.name}
                       </h3>
                     </div>
-                    <p className="font-sans font-normal text-[13px] sm:text-[14px] text-[#A3A3A3] mb-[12px]">
+                    <p className="font-sans font-normal text-[13px] sm:text-[14px] md:text-[16px] text-[#A3A3A3] mb-[12px]">
                       {car.desc}
                     </p>
 
-                    <div className="w-[32px] h-[2px] bg-[#C5A15D] mb-[16px]"></div>
+                    <div className="w-[32px] md:w-[40px] h-[2px] bg-[#C5A15D] mb-[16px]"></div>
 
                     {/* Specs Grid */}
                     <div className="grid grid-cols-3 gap-[10px] mb-[16px]">
                       <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Users className="w-[14px] h-[14px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] text-[#D2D2CF] whitespace-nowrap">{car.seats}</span>
+                        <Users className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.seats}</span>
                       </div>
                       <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Briefcase className="w-[14px] h-[14px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] text-[#D2D2CF] whitespace-nowrap">{car.bags}</span>
+                        <Briefcase className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.bags}</span>
                       </div>
                       <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Snowflake className="w-[14px] h-[14px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] text-[#D2D2CF] whitespace-nowrap">{car.ac}</span>
+                        <Snowflake className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.ac}</span>
                       </div>
                     </div>
 
                     {/* Tariff Box */}
-                    <div className="bg-[rgba(197,161,93,0.08)] border border-[rgba(197,161,93,0.2)] rounded-[12px] p-[12px] mb-[18px] flex items-center justify-between">
+                    <div className="bg-[rgba(197,161,93,0.08)] border border-[rgba(197,161,93,0.2)] rounded-[12px] p-[12px] md:p-[14px] mb-[18px] flex items-center justify-between">
                       <div className="flex items-center gap-[8px]">
-                        <Tag className="w-[16px] h-[16px] text-[#C5A15D]" />
+                        <Tag className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] text-[#C5A15D]" />
                         <div className="flex flex-col">
-                          <span className="font-sans text-[11px] uppercase tracking-wider text-[#A3A3A3]">Base Fare</span>
-                          <span className="font-sans font-semibold text-[14px] sm:text-[15px] text-[#F5F5F5]">{car.baseFare}</span>
+                          <span className="font-sans text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Base Fare</span>
+                          <span className="font-sans font-semibold text-[14px] sm:text-[15px] md:text-[17px] text-[#F5F5F5]">{car.baseFare}</span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="font-sans text-[11px] uppercase tracking-wider text-[#A3A3A3]">Per Extra KM</span>
-                        <span className="font-sans font-bold text-[15px] sm:text-[16px] text-[#C5A15D] block">{car.perKmRate}</span>
+                        <span className="font-sans text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Per Extra KM</span>
+                        <span className="font-sans font-bold text-[15px] sm:text-[16px] md:text-[18px] text-[#C5A15D] block">{car.perKmRate}</span>
                       </div>
                     </div>
                   </div>

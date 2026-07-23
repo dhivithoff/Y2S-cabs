@@ -61,13 +61,20 @@ export default function ServicesSection() {
       <div className="w-full flex flex-col items-center max-w-[1200px]">
         
         {/* Header Layout Structure */}
-        <div className="w-full flex flex-col items-center text-center mb-[56px]">
+        <div className="w-full flex flex-col items-center text-center mb-[40px] md:mb-[56px]">
           {/* Service Badge */}
-          <div className="w-[182px] h-[36px] rounded-full bg-transparent border border-[#C5A15D]/40 flex items-center justify-center mb-[24px] shadow-[0_0_15px_rgba(197,161,93,0.15)]">
-            <span className="font-sans font-medium text-[13px] tracking-[5px] text-[#C5A15D] uppercase ml-[5px]">OUR SERVICES</span>
+          <div className="w-max px-[18px] h-[36px] rounded-full bg-transparent border border-[#C5A15D]/40 flex items-center justify-center mb-[16px] shadow-[0_0_15px_rgba(197,161,93,0.15)]">
+            <span className="font-sans font-medium text-[12px] md:text-[13px] tracking-[4px] text-[#C5A15D] uppercase">
+              Cab Services in Tiruppur
+            </span>
           </div>
 
-          {/* Heading and Description Removed */}
+          <h2 className="font-serif font-bold text-[26px] sm:text-[34px] md:text-[42px] text-[#F5F5F5] mb-[8px]">
+            Airport, Local & Outstation Taxi Booking
+          </h2>
+          <p className="font-sans text-[14px] md:text-[16px] text-[#A3A3A3] max-w-[580px]">
+            Reliable 24/7 cab service in Tiruppur for airport transfers, local rides, one-way cabs, and outstation family trips.
+          </p>
         </div>
 
         {/* Service Grid - Compact Size */}
@@ -89,17 +96,37 @@ export default function ServicesSection() {
               {/* Gradient Overlay bottom to top */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-transparent z-10"></div>
 
-              <div className="relative z-20 flex flex-col h-full p-[16px] md:p-[24px]">
+              <div className="relative z-20 flex flex-col h-full p-[14px] sm:p-[16px] md:p-[24px]">
                 {/* Top Badge */}
-                <div className="w-max h-[28px] md:h-[32px] rounded-full bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center px-[10px] md:px-[12px] gap-[6px] md:gap-[8px]">
+                <div className="w-max h-[26px] sm:h-[28px] md:h-[32px] rounded-full bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center px-[8px] sm:px-[10px] md:px-[12px] gap-[4px] sm:gap-[6px] md:gap-[8px]">
                   {service.categoryIcon}
-                  <span className="font-sans font-medium text-[11px] md:text-[13px] text-[#F5F5F5]">{service.title}</span>
+                  <span className="font-sans font-medium text-[10px] sm:text-[11px] md:text-[13px] text-[#F5F5F5]">{service.title}</span>
                 </div>
                 
                 {/* Spacer */}
                 <div className="flex-grow"></div>
 
-                {/* Bottom Content - Hidden on Mobile */}
+                {/* Mobile Bottom Content (Only on Mobile screens, Windows version unchanged) */}
+                <div className="md:hidden flex flex-col justify-end">
+                  <div className="flex items-end justify-between gap-[6px]">
+                    <div className="flex flex-col">
+                      <h3 className="font-serif font-bold text-[14px] sm:text-[16px] text-[#F5F5F5] leading-[1.2] mb-[2px]">
+                        {service.title}
+                      </h3>
+                      <p className="font-sans font-normal text-[10px] sm:text-[11px] leading-[14px] text-[#D2D2CF] line-clamp-2">
+                        {service.description}
+                      </p>
+                    </div>
+                    <Link 
+                      href={service.link}
+                      className="w-[28px] h-[28px] rounded-full border border-[#C5A15D] flex items-center justify-center flex-shrink-0 bg-[#111111]/70 mb-[2px]"
+                    >
+                      <ArrowRight className="w-[12px] h-[12px] text-[#C5A15D]" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Bottom Content - Hidden on Mobile / Shown on Windows */}
                 <div className="hidden md:flex flex-col">
                   <div className="flex items-start justify-between gap-[12px] mb-[16px]">
                     <div className="flex flex-col">
@@ -149,13 +176,33 @@ export default function ServicesSection() {
              {/* Gradient fade to left on desktop */}
              <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
              {/* Gradient fade from bottom to top for mobile */}
-             <div className="md:hidden absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent z-10"></div>
+             <div className="md:hidden absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-transparent z-10"></div>
           </div>
 
           {/* Mobile Top Badge */}
-          <div className="md:hidden absolute top-[16px] left-[16px] z-20 w-max h-[28px] rounded-full bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center px-[10px] gap-[6px]">
+          <div className="md:hidden absolute top-[14px] left-[14px] z-20 w-max h-[26px] rounded-full bg-[#111111]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center px-[10px] gap-[6px]">
             <RefreshCw className="w-[12px] h-[12px] text-[#C5A15D]" />
             <span className="font-sans font-medium text-[11px] text-[#F5F5F5]">Round Trip</span>
+          </div>
+
+          {/* Mobile Content for Round Trip */}
+          <div className="md:hidden relative z-20 flex flex-col justify-end h-full p-[14px]">
+            <div className="flex items-end justify-between gap-[10px]">
+              <div className="flex flex-col">
+                <h3 className="font-serif font-bold text-[16px] text-[#F5F5F5] leading-[1.2] mb-[2px]">
+                  Round Trip
+                </h3>
+                <p className="font-sans font-normal text-[11px] leading-[14px] text-[#D2D2CF] max-w-[230px]">
+                  Perfect for your planned return journeys with same driver & schedule.
+                </p>
+              </div>
+              <Link 
+                href="/book"
+                className="w-[30px] h-[30px] rounded-full border border-[#C5A15D] flex items-center justify-center flex-shrink-0 bg-[#111111]/80 mb-[2px]"
+              >
+                <ArrowRight className="w-[13px] h-[13px] text-[#C5A15D]" />
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Content - Hidden on Mobile */}
