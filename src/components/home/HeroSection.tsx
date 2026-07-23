@@ -62,7 +62,7 @@ export default function HeroSection() {
           {/* Action CTA (Gold Book Ride button linking to /book) */}
           <motion.a 
             href="/book"
-            className="inline-flex items-center justify-between w-max h-[48px] md:h-[58px] rounded-[10px] md:rounded-[12px] bg-[#C5A15D] px-[20px] md:px-[32px] gap-[32px] md:gap-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.3)] mb-[24px] hover:bg-[#b89555] transition-colors"
+            className="inline-flex items-center justify-between w-max h-[48px] md:h-[58px] rounded-[10px] md:rounded-[12px] bg-[#C5A15D] px-[20px] md:px-[32px] gap-[32px] md:gap-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.3)] mt-[140px] md:mt-[0px] mb-[24px] hover:bg-[#b89555] transition-colors"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
