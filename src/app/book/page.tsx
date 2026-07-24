@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronRight, MessageCircle } from "lucide-react";
 import Footer from "@/components/layout/Footer";
 
-type TripType = "one-way" | "round-trip" | "airport" | "hourly";
+type TripType = "local-trip" | "round-trip" | "outstation" | "one-way" | "airport" | "hourly";
 type VehicleType = "sedan" | "mini" | "suv" | "innova" | "tempo";
 
 export default function BookRide() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    tripType: "one-way" as TripType,
+    tripType: "local-trip" as TripType,
     pickup: "",
     destination: "",
     vehicle: "sedan" as VehicleType,
@@ -41,7 +41,8 @@ export default function BookRide() {
   const prevStep = () => setStep(s => Math.max(s - 1, 1));
 
   const handleWhatsApp = () => {
-    const text = `*🚖 New Booking Request*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Trip Type:* ${formData.tripType}\n*Pickup:* ${formData.pickup}\n*Destination:* ${formData.destination}\n*Vehicle:* ${formData.vehicle}\n*Date:* ${formData.date}\n*Time:* ${formData.time}\n*Notes:* ${formData.notes}\n\nPlease confirm my booking.`;
+    const tripTypeFormatted = formData.tripType.replace("-", " ");
+    const text = `*🚖 New Booking Request*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Trip Type:* ${tripTypeFormatted}\n*Pickup:* ${formData.pickup}\n*Destination:* ${formData.destination}\n*Vehicle:* ${formData.vehicle}\n*Date:* ${formData.date}\n*Time:* ${formData.time}\n*Notes:* ${formData.notes}\n\nPlease confirm my booking.`;
     window.open(`https://wa.me/919790279217?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -107,20 +108,28 @@ export default function BookRide() {
                   <label className="block font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C7A35E] mb-[12px]">
                     Trip Type
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-[16px]">
-                    {["one-way", "round-trip", "airport", "hourly"].map((type) => {
-                      const isActive = formData.tripType === type;
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-[12px]">
+                    {[
+                      { id: "local-trip", label: "Local Trip" },
+                      { id: "round-trip", label: "Round Trip" },
+                      { id: "outstation", label: "Outstation" },
+                      { id: "one-way", label: "One Way" },
+                      { id: "airport", label: "Airport" },
+                      { id: "hourly", label: "Hourly" },
+                    ].map((item) => {
+                      const isActive = formData.tripType === item.id;
                       return (
                         <button
-                          key={type}
-                          onClick={() => updateForm("tripType", type)}
-                          className={`h-[56px] rounded-[16px] font-sans font-medium text-[16px] capitalize transition-all ${
+                          key={item.id}
+                          type="button"
+                          onClick={() => updateForm("tripType", item.id)}
+                          className={`h-[56px] px-[8px] rounded-[16px] font-sans font-medium text-[15px] transition-all whitespace-nowrap ${
                             isActive 
                               ? "bg-[rgba(197,161,93,0.08)] border border-[#C7A35E] text-[#C7A35E]" 
                               : "bg-[#252523] border border-[rgba(255,255,255,0.04)] text-[#D2D2CF] hover:border-[rgba(255,255,255,0.1)]"
                           }`}
                         >
-                          {type.replace("-", " ")}
+                          {item.label}
                         </button>
                       );
                     })}

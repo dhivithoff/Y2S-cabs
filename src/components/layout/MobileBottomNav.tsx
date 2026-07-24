@@ -25,11 +25,13 @@ export default function MobileBottomNav() {
             <a
               key={item.name}
               href={item.href}
-              className="flex flex-col items-center justify-center flex-1 h-full gap-1 text-[#C5A15D] hover:text-[#b89555] transition-colors"
+              className="flex flex-col items-center justify-center flex-1 relative -top-3"
               aria-label="Call Now"
             >
-              {item.icon}
-              <span className="text-[10px] font-sans font-medium">{item.name}</span>
+              <div className="w-[52px] h-[52px] rounded-full bg-[#C5A15D] text-[#111111] border-4 border-[#111111] flex items-center justify-center shadow-[0_4px_16px_rgba(197,161,93,0.5)] transition-transform hover:scale-105 active:scale-95">
+                <Phone className="w-5 h-5 fill-current" />
+              </div>
+              <span className="text-[10px] font-sans font-semibold text-[#C5A15D] mt-0.5">{item.name}</span>
             </a>
           );
         }

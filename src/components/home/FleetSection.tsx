@@ -90,84 +90,84 @@ export default function FleetSection() {
             return (
               <div 
                 key={index} 
-                className="w-full bg-[#111111] rounded-[20px] md:rounded-[24px] border border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row overflow-hidden group hover:border-[rgba(197,161,93,0.3)] transition-all duration-300"
+                className="w-full bg-[#111111] rounded-[16px] sm:rounded-[20px] md:rounded-[24px] border border-[rgba(255,255,255,0.06)] flex flex-row overflow-hidden group hover:border-[rgba(197,161,93,0.3)] transition-all duration-300"
               >
                 {/* Car Image (Left side) */}
-                <div className="w-full md:w-[45%] h-[210px] md:h-auto min-h-[210px] relative bg-[#0d0d0d] flex items-center justify-center p-3 flex-shrink-0">
+                <div className="w-[38%] sm:w-[40%] md:w-[45%] min-h-[160px] md:min-h-[210px] relative bg-[#0d0d0d] flex items-center justify-center p-2 md:p-3 flex-shrink-0">
                   <Image
                     src={car.image}
                     alt={car.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 360px"
+                    sizes="(max-width: 768px) 40vw, 360px"
                     className="object-cover opacity-95 transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Subtle dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-transparent via-transparent to-[#111111]/90 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#111111]/90 pointer-events-none"></div>
                 </div>
 
                 {/* Vehicle Details & Tariff (Right side) */}
-                <div className="w-full md:w-[55%] flex flex-col justify-between p-[20px] sm:p-[24px] md:p-[28px] relative z-20">
+                <div className="w-[62%] sm:w-[60%] md:w-[55%] flex flex-col justify-between p-[10px] sm:p-[18px] md:p-[28px] relative z-20">
                   <div>
                     {/* Name & Desc */}
-                    <div className="flex justify-between items-start mb-[6px]">
-                      <h3 className="font-serif font-bold text-[22px] sm:text-[26px] md:text-[28px] lg:text-[30px] text-[#F5F5F5]">
+                    <div className="flex justify-between items-start mb-[2px] sm:mb-[6px]">
+                      <h3 className="font-serif font-bold text-[15px] sm:text-[22px] md:text-[28px] lg:text-[30px] text-[#F5F5F5] leading-tight">
                         {car.name}
                       </h3>
                     </div>
-                    <p className="font-sans font-normal text-[13px] sm:text-[14px] md:text-[16px] text-[#A3A3A3] mb-[12px]">
+                    <p className="font-sans font-normal text-[11px] sm:text-[13px] md:text-[16px] text-[#A3A3A3] mb-[6px] sm:mb-[12px] line-clamp-1">
                       {car.desc}
                     </p>
 
-                    <div className="w-[32px] md:w-[40px] h-[2px] bg-[#C5A15D] mb-[16px]"></div>
+                    <div className="w-[24px] md:w-[40px] h-[2px] bg-[#C5A15D] mb-[8px] sm:mb-[16px]"></div>
 
                     {/* Specs Grid */}
-                    <div className="grid grid-cols-3 gap-[10px] mb-[16px]">
-                      <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Users className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.seats}</span>
+                    <div className="grid grid-cols-3 gap-[4px] sm:gap-[10px] mb-[8px] sm:mb-[16px]">
+                      <div className="flex items-center gap-[3px] sm:gap-[6px] bg-[#171717] px-[5px] sm:px-[10px] py-[4px] sm:py-[6px] rounded-[6px] sm:rounded-[8px] border border-[rgba(255,255,255,0.04)]">
+                        <Users className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[10px] sm:text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.seats}</span>
                       </div>
-                      <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Briefcase className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.bags}</span>
+                      <div className="flex items-center gap-[3px] sm:gap-[6px] bg-[#171717] px-[5px] sm:px-[10px] py-[4px] sm:py-[6px] rounded-[6px] sm:rounded-[8px] border border-[rgba(255,255,255,0.04)]">
+                        <Briefcase className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[10px] sm:text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.bags}</span>
                       </div>
-                      <div className="flex items-center gap-[6px] bg-[#171717] px-[10px] py-[6px] rounded-[8px] border border-[rgba(255,255,255,0.04)]">
-                        <Snowflake className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
-                        <span className="font-sans font-normal text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.ac}</span>
+                      <div className="flex items-center gap-[3px] sm:gap-[6px] bg-[#171717] px-[5px] sm:px-[10px] py-[4px] sm:py-[6px] rounded-[6px] sm:rounded-[8px] border border-[rgba(255,255,255,0.04)]">
+                        <Snowflake className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] md:w-[16px] md:h-[16px] text-[#C5A15D] flex-shrink-0" strokeWidth={2} />
+                        <span className="font-sans font-normal text-[10px] sm:text-[12px] md:text-[14px] text-[#D2D2CF] whitespace-nowrap">{car.ac}</span>
                       </div>
                     </div>
 
                     {/* Tariff Box */}
-                    <div className="bg-[rgba(197,161,93,0.08)] border border-[rgba(197,161,93,0.2)] rounded-[12px] p-[12px] md:p-[14px] mb-[18px] flex items-center justify-between">
-                      <div className="flex items-center gap-[8px]">
-                        <Tag className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] text-[#C5A15D]" />
+                    <div className="bg-[rgba(197,161,93,0.08)] border border-[rgba(197,161,93,0.2)] rounded-[8px] sm:rounded-[12px] p-[6px] sm:p-[12px] md:p-[14px] mb-[8px] sm:mb-[18px] flex items-center justify-between">
+                      <div className="flex items-center gap-[4px] sm:gap-[8px]">
+                        <Tag className="w-[13px] h-[13px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] text-[#C5A15D] hidden sm:block" />
                         <div className="flex flex-col">
-                          <span className="font-sans text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Base Fare</span>
-                          <span className="font-sans font-semibold text-[14px] sm:text-[15px] md:text-[17px] text-[#F5F5F5]">{car.baseFare}</span>
+                          <span className="font-sans text-[9px] sm:text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Base Fare</span>
+                          <span className="font-sans font-semibold text-[11px] sm:text-[14px] md:text-[17px] text-[#F5F5F5]">{car.baseFare}</span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="font-sans text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Per Extra KM</span>
-                        <span className="font-sans font-bold text-[15px] sm:text-[16px] md:text-[18px] text-[#C5A15D] block">{car.perKmRate}</span>
+                        <span className="font-sans text-[9px] sm:text-[11px] md:text-[12px] uppercase tracking-wider text-[#A3A3A3]">Per Extra KM</span>
+                        <span className="font-sans font-bold text-[11px] sm:text-[15px] md:text-[18px] text-[#C5A15D] block">{car.perKmRate}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-[12px]">
+                  <div className="flex items-center gap-[6px] sm:gap-[12px]">
                     <a
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 h-[42px] sm:h-[46px] bg-[#C5A15D] rounded-[10px] flex items-center justify-center gap-[8px] px-[16px] hover:bg-[#b89555] transition-colors"
+                      className="flex-1 h-[34px] sm:h-[42px] md:h-[46px] bg-[#C5A15D] rounded-[8px] sm:rounded-[10px] flex items-center justify-center gap-[4px] sm:gap-[8px] px-[8px] sm:px-[16px] hover:bg-[#b89555] transition-colors"
                     >
-                      <MessageCircle className="w-[16px] h-[16px] text-[#111111]" strokeWidth={2} />
-                      <span className="font-sans font-semibold text-[13px] sm:text-[14px] text-[#111111]">Book on WhatsApp</span>
+                      <MessageCircle className="w-[13px] h-[13px] sm:w-[16px] sm:h-[16px] text-[#111111]" strokeWidth={2} />
+                      <span className="font-sans font-semibold text-[10px] sm:text-[13px] md:text-[14px] text-[#111111] whitespace-nowrap">WhatsApp</span>
                     </a>
                     <Link
                       href="/book"
-                      className="h-[42px] sm:h-[46px] px-[14px] bg-[#171717] border border-[rgba(255,255,255,0.08)] rounded-[10px] flex items-center justify-center text-[#D2D2CF] hover:text-[#C5A15D] hover:border-[rgba(197,161,93,0.3)] transition-colors"
+                      className="h-[34px] sm:h-[42px] md:h-[46px] px-[10px] sm:px-[14px] bg-[#171717] border border-[rgba(255,255,255,0.08)] rounded-[8px] sm:rounded-[10px] flex items-center justify-center text-[#D2D2CF] hover:text-[#C5A15D] hover:border-[rgba(197,161,93,0.3)] transition-colors flex-shrink-0"
                     >
-                      <ArrowRight className="w-[18px] h-[18px]" strokeWidth={1.8} />
+                      <ArrowRight className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px]" strokeWidth={1.8} />
                     </Link>
                   </div>
 

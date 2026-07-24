@@ -14,6 +14,14 @@ export interface TariffDetail {
 }
 
 export const TARIFFS: Record<string, TariffDetail> = {
+  local: {
+    id: "local",
+    name: "Local Tariff",
+    seats: "4 Seats",
+    baseKm: 3,
+    baseFare: 150,
+    perKmRate: 20,
+  },
   sedan: {
     id: "sedan",
     name: "Sedan",
@@ -59,10 +67,10 @@ export const TARIFFS: Record<string, TariffDetail> = {
 export default function FareCalculatorSection() {
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
-  const [vehicle, setVehicle] = useState("sedan");
-  const [distance, setDistance] = useState<string>("20");
+  const [vehicle, setVehicle] = useState("local");
+  const [distance, setDistance] = useState<string>("3");
 
-  const selectedTariff = TARIFFS[vehicle as keyof typeof TARIFFS] || TARIFFS.sedan;
+  const selectedTariff = TARIFFS[vehicle as keyof typeof TARIFFS] || TARIFFS.local;
   const numDistance = Math.max(0, parseFloat(distance) || 0);
 
   const calculateFareDetails = () => {
@@ -94,7 +102,7 @@ export default function FareCalculatorSection() {
   };
 
   const handleWhatsAppBooking = () => {
-    const text = `*🚖 Fare Estimate & Booking Inquiry*\n\n*Pickup:* ${pickup || "Not specified"}\n*Dropoff:* ${dropoff || "Not specified"}\n*Vehicle:* ${selectedTariff.name} (${selectedTariff.seats})\n*Estimated Distance:* ${distance} KM\n*Estimated Fare:* ₹${fareDetails.totalFare.toLocaleString('en-IN')}\n\nNote: Toll, parking & permit charges are extra.\n\nPlease confirm availability and booking.`;
+    const text = `*🚖 Fare Estimate & Booking Inquiry*\n\n*Pickup:* ${pickup || "Not specified"}\n*Dropoff:* ${dropoff || "Not specified"}\n*Tariff:* ${selectedTariff.name} (${selectedTariff.seats})\n*Estimated Distance:* ${distance} KM\n*Estimated Fare:* ₹${fareDetails.totalFare.toLocaleString('en-IN')}\n\nNote: Toll, parking & permit charges are extra.\n\nPlease confirm availability and booking.`;
     window.open(`https://wa.me/919790279217?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -187,13 +195,14 @@ export default function FareCalculatorSection() {
           <div className="w-full h-[88px] bg-[#1a1a1a] rounded-[18px] border border-[rgba(255,255,255,0.04)] px-[20px] flex items-center gap-[16px]">
             <Car className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
             <div className="flex flex-col flex-grow justify-center h-full">
-              <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">VEHICLE TYPE</span>
+              <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">TARIFF / VEHICLE TYPE</span>
               <select 
                 suppressHydrationWarning
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white appearance-none cursor-pointer"
                 value={vehicle}
                 onChange={(e) => setVehicle(e.target.value)}
               >
+                <option value="local" className="bg-[#1a1a1a] text-white">Local Tariff (1st 3km ₹150 + ₹20/km)</option>
                 <option value="sedan" className="bg-[#1a1a1a] text-white">Sedan (1st 20km ₹500 + ₹14/km)</option>
                 <option value="mini" className="bg-[#1a1a1a] text-white">Mini (1st 20km ₹400 + ₹13/km)</option>
                 <option value="suv" className="bg-[#1a1a1a] text-white">SUV (1st 20km ₹900 + ₹18/km)</option>

@@ -26,19 +26,24 @@ export default function Navbar() {
       className={`fixed top-0 w-full z-50 h-[88px] transition-colors duration-300 ${scrolled ? 'bg-[#111111]/95 backdrop-blur-md shadow-md border-b border-[rgba(255,255,255,0.05)]' : 'bg-transparent'}`}
     >
       <div className="relative w-full h-full max-w-[1440px] mx-auto flex items-center justify-between px-[16px] md:px-[32px]">
-        {/* Logo */}
+        {/* Logo & Brand Name */}
         <Link 
           href="/" 
-          className="relative w-[90px] h-[85px] mt-[10px] flex-shrink-0" 
+          className="flex items-center gap-[8px] sm:gap-[12px] flex-shrink-0" 
         >
-          <Image
-            src="/logo.png"
-            alt="Y2S Cabs Logo"
-            fill
-            sizes="90px"
-            className="object-contain object-top"
-            priority
-          />
+          <div className="relative w-[55px] h-[55px] sm:w-[70px] sm:h-[70px] flex-shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Y2S Cabs Logo"
+              fill
+              sizes="70px"
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="font-serif font-bold text-[15px] sm:text-[18px] md:text-[20px] text-[#F5F5F5] tracking-tight leading-tight">
+            Y2S Cabs & Services
+          </span>
         </Link>
 
         {/* Center Navigation Links */}
@@ -49,24 +54,14 @@ export default function Navbar() {
           <Link href="/book" className="font-sans font-medium text-[15px] text-[#A3A3A3] hover:text-[#C5A15D] transition-colors">Bookings</Link>
         </nav>
 
-        {/* Call Button (Right Corner) */}
-        <div className="flex items-center absolute right-[16px] md:static md:right-auto">
-          {/* Desktop/Tablet explicit call button */}
+        {/* Call Button (Desktop Only) */}
+        <div className="hidden md:flex items-center">
           <a
             href="tel:+919790279217"
-            className="hidden md:flex items-center gap-[10px] bg-[rgba(197,161,93,0.1)] border border-[#C5A15D] text-[#C5A15D] h-[46px] px-[20px] rounded-full font-sans font-medium hover:bg-[#C5A15D] hover:text-[#111111] transition-all"
+            className="flex items-center gap-[10px] bg-[rgba(197,161,93,0.1)] border border-[#C5A15D] text-[#C5A15D] h-[46px] px-[20px] rounded-full font-sans font-medium hover:bg-[#C5A15D] hover:text-[#111111] transition-all"
           >
             <Phone className="w-[18px] h-[18px]" strokeWidth={2} />
             <span className="text-[15px]">+91 97902 79217</span>
-          </a>
-          
-          {/* Mobile icon call button */}
-          <a
-            href="tel:+919790279217"
-            className="flex md:hidden items-center justify-center w-[46px] h-[46px] flex-shrink-0 rounded-full border border-[#C5A15D] bg-[rgba(197,161,93,0.1)] hover:bg-[#C5A15D] hover:text-[#111111] text-[#C5A15D] transition-colors shadow-md"
-            aria-label="Call Us"
-          >
-            <Phone className="w-[20px] h-[20px]" strokeWidth={2} />
           </a>
         </div>
       </div>
