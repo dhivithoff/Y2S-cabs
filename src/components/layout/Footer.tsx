@@ -3,13 +3,13 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const InstagramIcon = ({ className }: { className?: string }) => (
-  <svg 
-    className={className} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="1.8" 
-    strokeLinecap="round" 
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
     strokeLinejoin="round"
   >
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-[rgba(255,255,255,0.06)] pt-[48px] md:pt-[64px] pb-[40px] px-[20px] sm:px-[24px] md:px-[64px]">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-[36px] md:gap-[44px]">
-        
+
         {/* Main Footer Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-[32px] pb-[32px] border-b border-[rgba(255,255,255,0.06)]">
           {/* Logo & Tagline */}
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/y2s_cabs_travels?igsh=MWp0cG8zbDk1NW1uMg=="
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
