@@ -41,6 +41,11 @@ export default function HeroSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex flex-col"
         >
+          {/* Brand Name Above Eyebrow Badge */}
+          <div className="font-sans font-bold text-[15px] sm:text-[18px] md:text-[22px] tracking-[3px] text-[#C5A15D] uppercase mb-[8px] md:mb-[12px]">
+            Y2S CABS & TRAVELS
+          </div>
+
           {/* Local SEO Eyebrow Badge */}
           <div className="w-max h-[32px] md:h-[36px] rounded-full bg-[rgba(197,161,93,0.12)] border border-[#C5A15D]/40 flex items-center px-[12px] md:px-[16px] mb-[16px] md:mb-[24px] backdrop-blur-md">
             <span className="font-sans font-medium text-[11px] md:text-[13px] tracking-[3px] text-[#C5A15D] uppercase">

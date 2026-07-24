@@ -31,18 +31,18 @@ export default function Navbar() {
           href="/" 
           className="flex items-center gap-[8px] sm:gap-[12px] flex-shrink-0" 
         >
-          <div className="relative w-[55px] h-[55px] sm:w-[70px] sm:h-[70px] flex-shrink-0">
+          <div className="relative w-[68px] h-[68px] sm:w-[75px] sm:h-[75px] flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Y2S Cabs Logo"
               fill
-              sizes="70px"
+              sizes="75px"
               className="object-contain"
               priority
             />
           </div>
-          <span className="font-serif font-bold text-[15px] sm:text-[18px] md:text-[20px] text-[#F5F5F5] tracking-tight leading-tight">
-            Y2S Cabs & Services
+          <span className="hidden md:block font-serif font-bold text-[15px] sm:text-[18px] md:text-[20px] text-[#F5F5F5] tracking-tight leading-tight">
+            Y2S Cabs & Travels
           </span>
         </Link>
 
