@@ -13,13 +13,13 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
@@ -27,11 +27,11 @@ export default function Navbar() {
     >
       <div className="relative w-full h-full max-w-[1440px] mx-auto flex items-center justify-between px-[16px] md:px-[32px]">
         {/* Logo Only */}
-        <Link 
-          href="/" 
-          className="flex items-center flex-shrink-0" 
+        <Link
+          href="/"
+          className="flex items-center flex-shrink-0"
         >
-          <div className="relative w-[68px] h-[68px] sm:w-[75px] sm:h-[75px] md:w-[92px] md:h-[92px] lg:w-[98px] lg:h-[98px] flex-shrink-0 transition-all">
+          <div className="relative w-[72px] h-[72px] sm:w-[75px] sm:h-[75px] md:w-[92px] md:h-[92px] lg:w-[98px] lg:h-[98px] flex-shrink-0 transition-all">
             <Image
               src="/logo.png"
               alt="Y2S Cabs Logo"
