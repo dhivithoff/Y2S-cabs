@@ -2,21 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
-const InstagramIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
 
 export default function Footer() {
   return (
@@ -69,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Gold Action Icon Buttons (Call, WhatsApp, Instagram, Mail) */}
+        {/* Gold Action Icon Buttons (Call, WhatsApp, Mail) */}
         <div className="flex items-center justify-center sm:justify-start gap-[16px] pt-[8px]">
           {/* Call */}
           <a
@@ -91,16 +76,6 @@ export default function Footer() {
             <MessageCircle className="w-[20px] h-[20px] md:w-[22px] md:h-[22px]" strokeWidth={1.8} />
           </a>
 
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/y2s_cabs_travels?igsh=MWp0cG8zbDk1NW1uMg=="
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="w-[46px] h-[46px] md:w-[50px] md:h-[50px] rounded-full bg-[rgba(197,161,93,0.12)] border border-[#C5A15D] text-[#C5A15D] hover:bg-[#C5A15D] hover:text-[#111111] flex items-center justify-center transition-all duration-300 shadow-[0_0_12px_rgba(197,161,93,0.2)] hover:scale-105"
-          >
-            <InstagramIcon className="w-[20px] h-[20px] md:w-[22px] md:h-[22px]" />
-          </a>
 
           {/* Mail */}
           <a

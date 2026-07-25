@@ -108,11 +108,11 @@ export default function FareCalculatorSection() {
 
   return (
     <section className="relative bg-[#0a0a0a] w-full py-[80px] px-[24px] md:px-[56px] flex flex-col items-center overflow-hidden">
-      
+
       {/* Background Image at Bottom */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[610px] h-[300px] z-0 pointer-events-none opacity-30">
-        <Image 
-          src="/hero-mobile-bg.png" 
+        <Image
+          src="/hero-mobile-bg.png"
           alt="Jaguar"
           fill
           sizes="610px"
@@ -121,7 +121,7 @@ export default function FareCalculatorSection() {
       </div>
 
       <div className="relative z-10 w-full flex flex-col items-center max-w-[820px]">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center mb-[48px]">
           <span className="font-sans font-medium text-[14px] tracking-[4px] text-[#C5A15D] uppercase mb-[16px]">
@@ -137,9 +137,9 @@ export default function FareCalculatorSection() {
             <MapPin className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">PICKUP LOCATION</span>
-              <input 
+              <input
                 suppressHydrationWarning
-                type="text" 
+                type="text"
                 placeholder="Enter pickup address"
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
                 value={pickup}
@@ -149,7 +149,7 @@ export default function FareCalculatorSection() {
           </div>
 
           {/* Swap Button (Absolute position over the gap) */}
-          <button 
+          <button
             suppressHydrationWarning
             onClick={handleSwap}
             className="absolute right-[48px] top-[99px] w-[52px] h-[52px] rounded-full bg-[#111111] border-2 border-[#C5A15D] flex items-center justify-center z-10 hover:bg-[#1a1a1a] transition-colors"
@@ -163,9 +163,9 @@ export default function FareCalculatorSection() {
             <Navigation className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">DROPOFF LOCATION</span>
-              <input 
+              <input
                 suppressHydrationWarning
-                type="text" 
+                type="text"
                 placeholder="Enter destination"
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
                 value={dropoff}
@@ -179,9 +179,9 @@ export default function FareCalculatorSection() {
             <Clock className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
             <div className="flex flex-col flex-grow justify-center h-full">
               <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">ESTIMATED KM</span>
-              <input 
+              <input
                 suppressHydrationWarning
-                type="number" 
+                type="number"
                 min="1"
                 placeholder="Enter estimated distance in KM"
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white placeholder-[#BEBEB8]"
@@ -195,8 +195,8 @@ export default function FareCalculatorSection() {
           <div className="w-full h-[88px] bg-[#1a1a1a] rounded-[18px] border border-[rgba(255,255,255,0.04)] px-[20px] flex items-center gap-[16px]">
             <Car className="w-[22px] h-[22px] text-[#C5A15D] flex-shrink-0" />
             <div className="flex flex-col flex-grow justify-center h-full">
-              <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]">TARIFF / VEHICLE TYPE</span>
-              <select 
+              <span className="font-sans font-medium text-[14px] tracking-[1.8px] uppercase text-[#C5A15D] mb-[2px]"> VEHICLE TYPE / TARIFF </span>
+              <select
                 suppressHydrationWarning
                 className="w-full bg-transparent border-none outline-none font-sans font-normal text-[18px] text-white appearance-none cursor-pointer"
                 value={vehicle}
@@ -228,7 +228,7 @@ export default function FareCalculatorSection() {
               <span className="text-[#BEBEB8]">Base Fare (1st 20 km - {selectedTariff.name})</span>
               <span className="text-white font-medium">₹{fareDetails.baseFare.toLocaleString('en-IN')}</span>
             </div>
-            
+
             <div className="flex justify-between items-center text-[14px] font-sans">
               <span className="text-[#BEBEB8]">
                 Additional ({fareDetails.extraKm} km @ ₹{selectedTariff.perKmRate}/km)
