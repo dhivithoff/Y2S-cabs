@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
@@ -178,6 +179,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} dark antialiased`}
     >
+      <GoogleTagManager gtmId="GTM-TXKTMNBC" />
       <head>
         <script
           type="application/ld+json"
@@ -192,6 +194,12 @@ export default function RootLayout({
                 var target = e.target.closest('a[href^="tel:"], a[href*="wa.me"]');
                 if (target) {
                   var isTel = target.href.indexOf('tel:') === 0;
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                    'event': isTel ? 'phone_call_click' : 'whatsapp_click',
+                    'event_category': 'Google Call Ads Lead',
+                    'event_label': target.href
+                  });
                   if (typeof window.gtag === 'function') {
                     window.gtag('event', isTel ? 'phone_call_click' : 'whatsapp_click', {
                       'event_category': 'Google Call Ads Lead',
