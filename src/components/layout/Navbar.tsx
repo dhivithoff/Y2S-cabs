@@ -33,7 +33,7 @@ export default function Navbar() {
         >
           <div className="relative w-[72px] h-[72px] sm:w-[75px] sm:h-[75px] md:w-[92px] md:h-[92px] lg:w-[98px] lg:h-[98px] flex-shrink-0 transition-all">
             <Image
-              src="/logo.png"
+              src="/site-logo.png"
               alt="Y2S Cabs Logo"
               fill
               sizes="(max-width: 768px) 75px, 100px"

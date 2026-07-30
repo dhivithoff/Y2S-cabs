@@ -12,12 +12,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-[32px] pb-[32px] border-b border-[rgba(255,255,255,0.06)]">
           {/* Logo & Tagline */}
           <div className="flex flex-col gap-[12px]">
-            <div className="relative w-[140px] md:w-[160px] h-[40px] md:h-[46px]">
+            <div className="relative w-[100px] md:w-[120px] h-[80px] md:h-[95px]">
               <Image
-                src="/logo.png"
+                src="/site-logo.png"
                 alt="Y2S Cabs Logo"
                 fill
-                sizes="(max-width: 768px) 140px, 160px"
+                sizes="(max-width: 768px) 100px, 120px"
                 className="object-contain object-left"
               />
             </div>
