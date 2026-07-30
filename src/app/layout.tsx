@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico" },
     ],
     shortcut: "/logo.png",
-    apple: "/logo.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "24/7 Cab Service in Tiruppur | Airport, Local & Outstation Taxi",
