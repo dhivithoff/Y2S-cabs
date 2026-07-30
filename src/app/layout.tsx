@@ -55,7 +55,11 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
@@ -65,9 +69,9 @@ export const metadata: Metadata = {
     url: baseUrl,
     images: [
       {
-        url: "/metalogo.jpeg",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 500,
+        height: 500,
         alt: "Y2S Cabs & Travels Tiruppur Logo",
       },
     ],
@@ -78,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "24/7 Cab Service in Tiruppur | Airport, Local & Outstation Taxi",
     description: "Reliable cab services in Tiruppur with airport transfers, local taxis, outstation travel, and corporate transportation.",
-    images: ["/metalogo.jpeg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -86,7 +90,8 @@ const jsonLdSchema = {
   "@context": "https://schema.org",
   "@type": "TaxiService",
   "name": "Y2S Cabs & Travels",
-  "image": `${baseUrl}/metalogo.jpeg`,
+  "image": `${baseUrl}/logo.png`,
+  "logo": `${baseUrl}/logo.png`,
   "@id": `${baseUrl}/#taxiservice`,
   "url": baseUrl,
   "telephone": "+919790279217",

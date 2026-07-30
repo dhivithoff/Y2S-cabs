@@ -8,8 +8,9 @@ import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Y2S Cabs & Travels | Premium Luxury Taxi Booking",
-  description: "Book premium luxury taxis for airport transfers, outstation, and local rides. 24x7 service.",
+  title: "Best Taxi Service in Tiruppur | Y2S Cabs & Travels",
+  description:
+    "Book affordable taxi services in Tiruppur. Local taxi, airport transfers, one-way, outstation and 24/7 cab service with professional drivers. Call now.",
 };
 
 export default function Home() {
